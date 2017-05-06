@@ -16,7 +16,8 @@
       true,
       "never"
     ],
-    "no-require-imports": true
+    "no-require-imports": true,
+    "eofline": true
   },
   "rulesDirectory": []
 }
