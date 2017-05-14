@@ -1,7 +1,9 @@
 {
   "defaultSeverity": "error",
   "extends": [
-    "tslint-config-standard"
+    "tslint:recommended",
+    "tslint-config-standard",
+    "tslint-react"
   ],
   "jsRules": {},
   "rules": {
@@ -17,7 +19,18 @@
       "never"
     ],
     "no-require-imports": true,
-    "eofline": true
+    "eofline": true,
+    "object-literal-key-quotes": [
+      true,
+      "as-needed"
+    ],
+    "jsx-no-lambda": false,
+    "object-literal-sort-keys": false,
+    "max-classes-per-file": false,
+    "jsx-no-multiline-js": false,
+    "jsx-boolean-value": false,
+    "no-namespace": false,
+    "jsx-wrap-multiline": false
   },
   "rulesDirectory": []
 }

@@ -5,7 +5,7 @@
   "repository": "https://github.com/hollowverse/common-config",
   "license": "Unlicense",
   "scripts": {
-    "lint": "tslint '**/*.t{s,sx}' -e '**/node_modules/**' --fix",
+    "lint": "tslint '**/*.t{s,sx}' -e '**/node_modules/**' --fix --project ./tsconfig.json --type-check",
     "precommit": "lint-staged"
   },
   "devDependencies": {
@@ -14,6 +14,7 @@
     "ts-node": "^3.0.3",
     "tslint": "^5.0.0",
     "tslint-config-standard": "^5.0.2",
+    "tslint-react": "^3.0.0",
     "typescript": "^2.1.6"
   },
   "lint-staged": {
@@ -24,6 +25,9 @@
   },
   "pre-commit": "lint-staged",
   "commonpkgShare": [
-    "scripts", "devDependencies", "lint-staged", "pre-commit"
+    "scripts",
+    "devDependencies",
+    "lint-staged",
+    "pre-commit"
   ]
 }
