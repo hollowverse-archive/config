@@ -26,11 +26,13 @@
     ],
     "jsx-no-lambda": false,
     "object-literal-sort-keys": false,
-    "max-classes-per-file": false,
+    "max-classes-per-file": [false],
     "jsx-no-multiline-js": false,
     "jsx-boolean-value": false,
     "no-namespace": false,
-    "jsx-wrap-multiline": false
+    "jsx-wrap-multiline": false,
+    "await-promise": false,
+    "no-floating-promises": false
   },
   "rulesDirectory": []
 }
