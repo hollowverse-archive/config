@@ -1,6 +1,6 @@
 {
   "name": "@hollowverse/common-config",
-  "version": "1.0.6",
+  "version": "1.1.0",
   "description": "Common configurations for Hollowverse repos",
   "repository": "https://github.com/hollowverse/common-config",
   "license": "Unlicense",
