@@ -6,7 +6,7 @@
   "license": "Unlicense",
   "commonpkgShare": {
     "scripts": {
-      "lint": "tslint '**/*.t{s,sx}' -e '**/node_modules/**' --fix --project ./tsconfig.json --type-check",
+      "lint": "tslint '**/*.t{s,sx}' --e='**/node_modules/**' --fix --project ./tsconfig.json --type-check",
       "precommit": "lint-staged"
     },
     "devDependencies": {
