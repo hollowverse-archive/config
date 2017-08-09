@@ -4,6 +4,26 @@
   "description": "Common configurations for Hollowverse repos",
   "repository": "https://github.com/hollowverse/common-config",
   "license": "Unlicense",
+  "peerDependencies": {
+    "babel-eslint": "^7.2.3",
+    "babel-preset-env": "^1.6.0",
+    "eslint": "^4.1.1",
+    "eslint-config-airbnb": "^15.0.2",
+    "eslint-config-prettier": "^2.3.0",
+    "eslint-loader": "^1.9.0",
+    "eslint-plugin-import": "^2.7.0",
+    "eslint-plugin-jsx-a11y": "^6.0.2",
+    "eslint-plugin-react": "^7.1.0",
+    "tslint": "^5.5.0",
+    "tslint-config-prettier": "^1.1.0",
+    "tslint-eslint-rules": "^4.1.1",
+    "tslint-loader": "^3.5.3",
+    "tslint-microsoft-contrib": "^5.0.1",
+    "tslint-react": "^3.0.0",
+    "stylelint": "^7.12.0",
+    "stylelint-config-standard": "^16.0.0",
+    "stylelint-no-unsupported-browser-features": "^1.0.0"
+  },
   "commonpkgShare": {
     "scripts": {
       "lint": "tslint '**/*.t{s,sx}' -e '**/node_modules/**' --fix --project ./tsconfig.json --type-check",
