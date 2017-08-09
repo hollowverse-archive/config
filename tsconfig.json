@@ -32,7 +32,7 @@
     // on JSX. Otherwise Babel won't see any JSX and no optimizations will be applied.
     "jsx": "react",
 
-    // Allow absolute imports from 'src' dir,
+    // Allow absolute imports from root directory,
     // e.g. `import 'file';` instead of `'../../file';`
     // This also has to be set in `webpack.config.json`, check `resolve.modules`
     "baseUrl": ".",
