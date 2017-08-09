@@ -6,14 +6,21 @@
     "moduleResolution": "node",
     "allowSyntheticDefaultImports": true,
   
-    "strict": true,
-    "noEmitOnError": true,
     "module": "commonjs",
     "target": "es2015",
     "skipLibCheck": false,
     "skipDefaultLibCheck": true,
+    
+    "strict": true,
     "noUnusedLocals": true,
     "noUnusedParameters": true,
+    "strictNullChecks": true,
+    "forceConsistentCasingInFileNames": true,
+    "noFallthroughCasesInSwitch": true,
+    "noImplicitReturns": true,
+    "noImplicitThis": true,
+    
+    "noEmitOnError": true,
 
     "sourceMap": true,
     
