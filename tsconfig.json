@@ -35,7 +35,10 @@
     // Allow absolute imports from root directory,
     // e.g. `import 'file';` instead of `'../../file';`
     // This also has to be set in `webpack.config.json`, check `resolve.modules`
-    "baseUrl": ".",
+
+    // Since this file will be in node_modules/common-config, we need to go
+    // up two directory levels to resolve starting from the project's root.
+    "baseUrl": "./../..",
 
     // Specifies how to resolve absolute imports relative to baseUrl
     "paths": {
