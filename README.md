@@ -7,7 +7,7 @@ It currently includes configuration files for:
 
 * TypeScript ([`tsconfig.json`](./tsconfig.json))
 * TSLint ([`tslint.json`](./tslint.json))
-* ESLint ([`eslint.json`](./.eslintrc.json))
+* ESLint ([`.eslintrc.json`](./.eslintrc.json))
 * Stylelint ([`.stylelintrc`](./.stylelintrc))
 
 ## How to use the shared configuration
