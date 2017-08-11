@@ -24,10 +24,7 @@ It currently includes configuration files for:
     
     ```json
     {
-      "extends": "./node_modules/common-config/tsconfig.json",
-      "compilerOptions": {
-        // ...
-      }
+      "extends": "./node_modules/common-config/tsconfig.json"
     }
     ```
    Refer to each tool's documentation for more information on how to extend the configuration.
