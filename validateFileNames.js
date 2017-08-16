@@ -49,7 +49,7 @@ files.forEach(file => {
 if (filesInViolation.length > 0) {
   // Yes, inform the user and exit with 1
   console.log(
-    `\n${underscore('The file names below need to be camelCase:')}\n`,
+    `\n${underline('The file names below need to be camelCase:')}\n`,
   );
 
   filesInViolation.forEach(file => {
@@ -69,7 +69,7 @@ function getFiles() {
   return files.split('\n').filter(file => {
     // remove empty strings from the array and remove files in ignored paths
     return (
-      file.length !== 0 && !isIgnored(file) 
+      file.length !== 0 && !isIgnored(file)
     );
   });
 }
@@ -89,6 +89,6 @@ function isIgnored(filePath) {
 function red(text) {
   return `\x1b[31m${text}\x1b[0m`;
 }
-function underscore(text) {
+function underline(text) {
   return `\x1b[4m${text}\x1b[0m`;
 }
