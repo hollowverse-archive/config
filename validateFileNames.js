@@ -67,8 +67,9 @@ function getFiles() {
   const files = shelljs.exec('git ls-files', { silent: true });
 
   return files.split('\n').filter(file => {
+    // remove empty strings from the array and remove files in ignored paths
     return (
-      file.length !== 0 && !isIgnored(file) // remove empty strings from the array // remove files in ignored paths
+      file.length !== 0 && !isIgnored(file) 
     );
   });
 }
