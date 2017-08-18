@@ -1,5 +1,6 @@
 const shelljs = require('shelljs');
 const minimatch = require('minimatch');
+const path = require('path')
 
 // Regex that defines our file and directory naming convention
 const camelCasedFileNameRegex = /^[.]?([a-z])+([0-9]|[a-zA-Z]|[.])*$/;
@@ -22,7 +23,7 @@ const filesInViolation = [];
 // Now let's go through the files to see if they violate the naming convention
 files.forEach(file => {
   // Split the path of the file to get the path components
-  const pathComponents = file.split('/');
+  const pathComponents = file.split(path.sep);
 
   // Let's start by assuming the file path has no invalid components
   let fileIsValid = true;
@@ -40,7 +41,7 @@ files.forEach(file => {
 
   // If we encountered any invalid components for this file, we'll remember the file.
   if (!fileIsValid) {
-    filesInViolation.push(processedPathComponents.join('/'));
+    filesInViolation.push(processedPathComponents.join(path.sep));
   }
 });
 
