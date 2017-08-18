@@ -1,18 +1,25 @@
 const shelljs = require('shelljs');
 const minimatch = require('minimatch');
 const path = require('path')
+const fs = require('fs')
 
 // Regex that defines our file and directory naming convention
 const camelCasedFileNameRegex = /^[.]?([a-z])+([0-9]|[a-zA-Z]|[.])*$/;
 
 // Files and directories that are exempt from the naming convention
-const ignoredFilesAndDirectories = [
-  'README.md',
-  'Dockerfile',
-  'LICENSE.md',
-  'customTypings/*',
-  'typings/*',
-];
+let ignoredFilesAndDirectories = []
+
+try {
+  ignoredFilesAndDirectories = require(`${process.cwd()}/validateFileNames.js`);
+} catch (e) {
+  ignoredFilesAndDirectories = [
+    'README.md',
+    'Dockerfile',
+    'LICENSE.md',
+    'customTypings/*',
+    'typings/*',
+  ];
+}
 
 // Get the list of files that we're interested in validating
 const files = getFiles();
