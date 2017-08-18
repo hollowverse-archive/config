@@ -1,13 +1,12 @@
 const shelljs = require('shelljs');
 const minimatch = require('minimatch');
-const path = require('path')
-const fs = require('fs')
+const path = require('path');
 
 // Regex that defines our file and directory naming convention
 const camelCasedFileNameRegex = /^[.]?([a-z])+([0-9]|[a-zA-Z]|[.])*$/;
 
 // Files and directories that are exempt from the naming convention
-let ignoredFilesAndDirectories = []
+let ignoredFilesAndDirectories = [];
 
 try {
   ignoredFilesAndDirectories = require(`${process.cwd()}/validateFileNames.js`);
@@ -57,9 +56,7 @@ files.forEach(file => {
 // So, did we have any files in violation?
 if (filesInViolation.length > 0) {
   // Yes, inform the user and exit with 1
-  console.log(
-    `\n${underline('The file names below need to be camelCase:')}\n`
-  );
+  console.log(`\n${underline('The file names below need to be camelCase:')}\n`);
 
   filesInViolation.forEach(file => {
     console.log(`• ${file}`);
@@ -77,9 +74,7 @@ function getFiles() {
 
   return files.split('\n').filter(file => {
     // remove empty strings from the array and remove files in ignored paths
-    return (
-      file.length !== 0 && !isIgnored(file)
-    );
+    return file.length !== 0 && !isIgnored(file);
   });
 }
 function isCamelCase(filePathComponent) {
@@ -87,7 +82,7 @@ function isCamelCase(filePathComponent) {
 }
 function isIgnored(filePath) {
   return ignoredFilesAndDirectories.some(ignoredFileOrDirectory => {
-    return minimatch(filePath, ignoredFileOrDirectory, {matchBase: true})
+    return minimatch(filePath, ignoredFileOrDirectory, { matchBase: true });
   });
 }
 function red(text) {
