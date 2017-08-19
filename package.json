@@ -23,6 +23,7 @@
     "tslint-react": "^3.0.0"
   },
   "dependencies": {
+    "@types/node": "^8.0.24",
     "minimatch": "^3.0.4",
     "shelljs": "^0.7.8"
   }

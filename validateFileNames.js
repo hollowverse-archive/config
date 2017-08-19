@@ -1,3 +1,5 @@
+// @ts-check
+
 const shelljs = require('shelljs');
 const minimatch = require('minimatch');
 const path = require('path');
