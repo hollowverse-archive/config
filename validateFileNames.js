@@ -3,7 +3,6 @@
 const shelljs = require('shelljs');
 const minimatch = require('minimatch');
 const path = require('path');
-const fs = require('fs');
 
 // Regex that defines our file and directory naming convention
 const camelCasedFileNameRegex = /^[.]?([a-z])+([0-9]|[a-zA-Z]|[.])*$/;
