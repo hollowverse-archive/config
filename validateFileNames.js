@@ -1,3 +1,5 @@
+#! /bin/node
+
 // @ts-check
 
 const shelljs = require('shelljs');
