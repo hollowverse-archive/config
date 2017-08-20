@@ -3,23 +3,30 @@
 const shelljs = require('shelljs');
 const minimatch = require('minimatch');
 const path = require('path');
+const fs = require('fs');
 
 // Regex that defines our file and directory naming convention
 const camelCasedFileNameRegex = /^[.]?([a-z])+([0-9]|[a-zA-Z]|[.])*$/;
 
 // Files and directories that are exempt from the naming convention
-let ignoredFilesAndDirectories = [];
+let ignoredPatterns = [
+  'README.md',
+  'Dockerfile',
+  'LICENSE.md',
+  'customTypings/*',
+  'typings/*',
+];
+
+const configFile = `${process.cwd()}/commonconfig.js`;
 
 try {
-  ignoredFilesAndDirectories = require(`${process.cwd()}/ignoreFileNames.js`);
+  const config = require(configFile);
+
+  if (Array.isArray(config.ignoredPatterns)) {
+    ignoredPatterns = config.ignoredPatterns;
+  }
 } catch (e) {
-  ignoredFilesAndDirectories = [
-    'README.md',
-    'Dockerfile',
-    'LICENSE.md',
-    'customTypings/*',
-    'typings/*',
-  ];
+  console.info('Error reading "commonconfig.js", falling back to default configuration');
 }
 
 // Get the list of files that we're interested in validating
@@ -88,7 +95,7 @@ function isCamelCase(filePathComponent) {
   return camelCasedFileNameRegex.test(filePathComponent);
 }
 function isIgnored(filePath) {
-  return ignoredFilesAndDirectories.some(ignoredFileOrDirectory => {
+  return ignoredPatterns.some(ignoredFileOrDirectory => {
     return minimatch(filePath, ignoredFileOrDirectory, { matchBase: true });
   });
 }
