@@ -26,7 +26,9 @@ try {
     ignoredPatterns = config.ignoredPatterns;
   }
 } catch (e) {
-  console.info('Error reading "commonconfig.js", falling back to default configuration');
+  console.info(
+    'Error reading "commonconfig.js", falling back to default configuration',
+  );
 }
 
 // Get the list of files that we're interested in validating
