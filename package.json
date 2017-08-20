@@ -23,8 +23,13 @@
     "tslint-react": "^3.0.0"
   },
   "dependencies": {
+    "@types/minimatch": "^3.0.0",
     "@types/node": "^8.0.24",
+    "@types/shelljs": "^0.7.4",
     "minimatch": "^3.0.4",
     "shelljs": "^0.7.8"
+  },
+  "bin": {
+    "validate-file-names": "./validateFileNames.js"
   }
 }

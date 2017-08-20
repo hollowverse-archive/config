@@ -24,7 +24,7 @@
 
     "sourceMap": true,
     
-    "allowJs": true,
+    "allowJs": false,
     "checkJs": true, // Enable TS type checker for JS
 
     // Do not transpile JSX with TypeScript, we will do that with Babel.

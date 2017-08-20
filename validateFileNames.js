@@ -8,18 +8,26 @@ const path = require('path');
 const camelCasedFileNameRegex = /^[.]?([a-z])+([0-9]|[a-zA-Z]|[.])*$/;
 
 // Files and directories that are exempt from the naming convention
-let ignoredFilesAndDirectories = [];
+let ignoredPatterns = [
+  'README.md',
+  'Dockerfile',
+  'LICENSE.md',
+  'customTypings/*',
+  'typings/*',
+];
+
+const configFile = `${process.cwd()}/commonconfig.js`;
 
 try {
-  ignoredFilesAndDirectories = require(`${process.cwd()}/validateFileNames.js`);
+  const config = require(configFile);
+
+  if (Array.isArray(config.ignoredPatterns)) {
+    ignoredPatterns = config.ignoredPatterns;
+  }
 } catch (e) {
-  ignoredFilesAndDirectories = [
-    'README.md',
-    'Dockerfile',
-    'LICENSE.md',
-    'customTypings/*',
-    'typings/*',
-  ];
+  console.info(
+    'Error reading "commonconfig.js", falling back to default configuration',
+  );
 }
 
 // Get the list of files that we're interested in validating
@@ -67,23 +75,28 @@ if (filesInViolation.length > 0) {
   shelljs.exit(1);
 } else {
   // No, exit with 0
+  console.info('All checked files are camelCased');
   shelljs.exit(0);
 }
 
 function getFiles() {
   // Let's only validate files managed by git
-  const files = shelljs.exec('git ls-files', { silent: true });
-
-  return files.split('\n').filter(file => {
-    // remove empty strings from the array and remove files in ignored paths
-    return file.length !== 0 && !isIgnored(file);
-  });
+  const { code, stdout } = shelljs.exec('git ls-files', { silent: true });
+  if (code === 0 && typeof stdout === 'string') {
+    return stdout.split('\n').filter(file => {
+      // remove empty strings from the array and remove files in ignored paths
+      return file.length !== 0 && !isIgnored(file);
+    });
+  } else {
+    console.error(red('Unable to read git tree, is this a git repository?'));
+    process.exit(1);
+  }
 }
 function isCamelCase(filePathComponent) {
   return camelCasedFileNameRegex.test(filePathComponent);
 }
 function isIgnored(filePath) {
-  return ignoredFilesAndDirectories.some(ignoredFileOrDirectory => {
+  return ignoredPatterns.some(ignoredFileOrDirectory => {
     return minimatch(filePath, ignoredFileOrDirectory, { matchBase: true });
   });
 }
