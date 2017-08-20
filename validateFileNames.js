@@ -81,14 +81,14 @@ if (filesInViolation.length > 0) {
 
 function getFiles() {
   // Let's only validate files managed by git
-  const { stdout } = shelljs.exec('git ls-files', { silent: true });
-  if (typeof stdout === 'string') {
+  const { code, stdout } = shelljs.exec('git ls-files', { silent: true });
+  if (code === 0 && typeof stdout === 'string') {
     return stdout.split('\n').filter(file => {
       // remove empty strings from the array and remove files in ignored paths
       return file.length !== 0 && !isIgnored(file);
     });
   } else {
-    red('Unable to read git tree, is this a git repository?');
+    console.error(red('Unable to read git tree, is this a git repository?'));
     process.exit(1);
   }
 }
