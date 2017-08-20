@@ -67,6 +67,7 @@ if (filesInViolation.length > 0) {
   shelljs.exit(1);
 } else {
   // No, exit with 0
+  console.info('All checked files are camelCased');
   shelljs.exit(0);
 }
 
