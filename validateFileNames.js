@@ -11,7 +11,7 @@ const camelCasedFileNameRegex = /^[.]?([a-z])+([0-9]|[a-zA-Z]|[.])*$/;
 let ignoredFilesAndDirectories = [];
 
 try {
-  ignoredFilesAndDirectories = require(`${process.cwd()}/validateFileNames.js`);
+  ignoredFilesAndDirectories = require(`${process.cwd()}/ignoreFileNames.js`);
 } catch (e) {
   ignoredFilesAndDirectories = [
     'README.md',
@@ -72,12 +72,16 @@ if (filesInViolation.length > 0) {
 
 function getFiles() {
   // Let's only validate files managed by git
-  const files = shelljs.exec('git ls-files', { silent: true });
-
-  return files.split('\n').filter(file => {
-    // remove empty strings from the array and remove files in ignored paths
-    return file.length !== 0 && !isIgnored(file);
-  });
+  const { stdout } = shelljs.exec('git ls-files', { silent: true });
+  if (typeof stdout === 'string') {
+    return stdout.split('\n').filter(file => {
+      // remove empty strings from the array and remove files in ignored paths
+      return file.length !== 0 && !isIgnored(file);
+    });
+  } else {
+    red('Unable to read git tree, is this a git repository?');
+    process.exit(1);
+  }
 }
 function isCamelCase(filePathComponent) {
   return camelCasedFileNameRegex.test(filePathComponent);
