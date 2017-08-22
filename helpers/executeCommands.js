@@ -5,7 +5,7 @@ const shelljs = require('shelljs');
  * A helper function that executes shell commands or JavaScript functions.
  * Supports asynchronous operations.
  * Simulates `set -e` behavior in shell, i.e. exits as soon as any commands fail
- * @param  {(string | function(): (number))[]} commands
+ * @param  {(string | function(): (number | Promise<number>))[]} commands
  * @return Exit code for the last executed command, a non-zero value indicates failure
  */
 module.exports = async function executeCommands(commands) {
