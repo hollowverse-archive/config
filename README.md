@@ -25,7 +25,7 @@ This repository contains shared configuration files, utility functions and code 
     
     ```json
     {
-      "extends": "./node_modules/common/tsconfig.json"
+      "extends": "./node_modules/@hollowverse/common/tsconfig.json"
     }
     ```
    Refer to each tool's documentation for more information on how to extend the configuration.
