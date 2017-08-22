@@ -5,10 +5,15 @@
   "repository": "https://github.com/hollowverse/common",
   "license": "Unlicense",
   "scripts": {
-    "validate-files-names": "node ./validateFileNames.js",
+    "validate-file-names": "node ./validateFileNames.js",
     "check-js": "tsc --noEmit",
-    "precommit": "run-s lint-staged validate-files-names check-js"
+    "lint-staged": "lint-staged"
   },
+  "pre-commit": [
+    "check-js",
+    "validate-file-names",
+    "lint-staged"
+  ],
   "lint-staged": {
     "**/*.{j,t}s{x,}": [
       "prettier --write --single-quote --trailing-comma all",
@@ -54,8 +59,9 @@
     "eslint-plugin-import": "^2.7.0",
     "eslint-plugin-jsx-a11y": "^6.0.2",
     "eslint-plugin-react": "^7.1.0",
-    "husky": "^0.14.3",
+    "lint-staged": "^4.0.3",
     "npm-run-all": "^4.0.2",
+    "pre-commit": "^1.2.2",
     "prettier": "^1.5.3",
     "tslint": "^5.5.0",
     "tslint-config-prettier": "^1.1.0",
