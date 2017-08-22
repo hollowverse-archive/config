@@ -14,5 +14,5 @@ module.exports = async function retryCommand(command, maxNumAttempts = 5) {
     numAttempts += 1;
   }
 
-  return code;
+  return code || 0;
 };
