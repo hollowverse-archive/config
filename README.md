@@ -32,22 +32,7 @@ This repository contains shared configuration files, utility functions and code 
 4. Add properties to the configuration file to override the shared configuration as needed.
 
 ## Helper Functions
-In addition to shared configuration files, `common` also provides a set of utility functions used in multiple repositories in the Hollowverse organization for deployment and other tasks:
 
-* [`decryptScripts`](./helpers/decryptScripts.js): Decrypts sensitive AES-256-CBC encrypted files using OpenSSL.
-* [`executeCommands`](./helpers/executeCommands.js): A helper function that executes shell commands or JavaScript functions.
-* [`retryCommand`](./helpers/retryCommand.js): Retries a JS or shell command multiple times before giving up.
-* [`writeEnvFile`](./helpers/writeEnvFile.js): Writes a JSON file that contains various information about App Engine configuration, including the branch name.
+In addition to shared configuration files, `common` also provides a set of utility functions used in multiple repositories in the Hollowverse organization for deployment and other tasks, the functions are exported from the [`./helpers`](./helpers) directory.
 
 Refer to the (`deploy.js`)[https://github.com/hollowverse/hollowverse/tree/master/deploy.s] script of [hollowverse/hollowverse](https://github.com/hollowverse/hollowverse) for examples on how to use these functions.
-
-## Code Quality Checks
-
-### `validate-file-names`
-To enforce a consistent file naming conventions, `common` exports a validation script that checks and reports file names that do not match the naming convention we use at Hollowverse.
-
-Once this package is installed, the script can be called using the following command:
-
-```
-yarn validate-file-names
-```
