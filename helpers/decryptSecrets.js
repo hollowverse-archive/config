@@ -4,10 +4,10 @@ const executeCommands = require('./executeCommands');
 
 /**
  * Decrypts sensitive AES-256-CBC encrypted files using OpenSSL.
- * @param {string} baseDirectory The full path to the directory containing the encrypted secrets
  * @param {Array<{ password: string, decryptedFilename: string }>} secrets Array of secret definitions
+ * @param {string} baseDirectory The full path to the directory containing the encrypted secrets
  */
-module.exports = function decryptSecrets(baseDirectory, secrets) {
+module.exports = function decryptSecrets(secrets, baseDirectory = './secrets') {
   return executeCommands(
     secrets.map(secret => {
       const { password, decryptedFilename } = secret;
