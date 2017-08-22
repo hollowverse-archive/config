@@ -31,5 +31,8 @@
   },
   "bin": {
     "validate-file-names": "./validateFileNames.js"
+  },
+  "devDependencies": {
+    "typescript": "^2.4.2"
   }
 }
