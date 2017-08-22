@@ -9,8 +9,6 @@ const shelljs = require('shelljs');
  * @return Exit code for the last executed command, a non-zero value indicates failure
  */
 module.exports = async function executeCommands(commands) {
-  let code = 0;
-
   for (const command of commands) {
     let code = 0;
     if (typeof command === 'function') {
@@ -29,10 +27,11 @@ module.exports = async function executeCommands(commands) {
       code = await new Promise((resolve) => shelljs.exec(shellCommand, resolve));
     }
 
+    // Return on first non-zero exit value
     if (code !== 0) {
-      break;
+      return code;
     }
   }
 
-  return code;
+  return 0;
 }
