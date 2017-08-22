@@ -1,7 +1,7 @@
 {
   "name": "@hollowverse/common",
   "version": "1.2.0",
-  "description": "Common configurations and helper functions for Hollowverse repos",
+  "description": "Common configurations, helper functions and code quality scripts for Hollowverse repos",
   "repository": "https://github.com/hollowverse/common-config",
   "license": "Unlicense",
   "peerDependencies": {
