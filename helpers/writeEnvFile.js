@@ -16,11 +16,18 @@ const writeFile = promisify(fs.writeFile);
  * @param {string} path The path where the file should be written
  */
 module.exports = async function writeEnvFile(service, env, path) {
-  await writeFile(path, JSON.stringify({
-    project: env.PROJECT,
-    branch: env.BRANCH,
-    service,
-  }, undefined, 2));
+  await writeFile(
+    path,
+    JSON.stringify(
+      {
+        project: env.PROJECT,
+        branch: env.BRANCH,
+        service,
+      },
+      undefined,
+      2,
+    ),
+  );
 
   return 0;
 };

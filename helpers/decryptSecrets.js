@@ -24,4 +24,4 @@ module.exports = function decryptSecrets(secrets, baseDirectory = './secrets') {
       `;
     }),
   );
-}
+};

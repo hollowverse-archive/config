@@ -10,6 +10,7 @@ module.exports = async function retryCommand(command, maxNumAttempts = 5) {
   let code = null;
 
   while (code !== 0 && numAttempts < maxNumAttempts) {
+    // eslint-disable-next-line no-await-in-loop
     code = await executeCommands([command]);
     numAttempts += 1;
   }
