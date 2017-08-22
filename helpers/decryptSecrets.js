@@ -13,7 +13,7 @@ module.exports = function decryptSecrets(baseDirectory, secrets) {
       const { password, decryptedFilename } = secret;
 
       const decryptedFilePath = path.join(baseDirectory, decryptedFilename);
-      const encryptedFilePath = path.join(baseDirectory, `${decryptedFilename}.enc`);
+      const encryptedFilePath = `${decryptedFilePath}.enc`;
 
       return `
         openssl aes-256-cbc \
