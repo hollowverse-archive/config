@@ -2,7 +2,7 @@
   "name": "@hollowverse/common",
   "version": "1.2.0",
   "description": "Common configurations, helper functions and code quality scripts for Hollowverse repos",
-  "repository": "https://github.com/hollowverse/common-config",
+  "repository": "https://github.com/hollowverse/common",
   "license": "Unlicense",
   "scripts": {
     "validate-files-names": "node ./validateFileNames.js",
