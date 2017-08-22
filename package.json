@@ -4,10 +4,20 @@
   "description": "Common configurations, helper functions and code quality scripts for Hollowverse repos",
   "repository": "https://github.com/hollowverse/common-config",
   "license": "Unlicense",
-  "pre-commit": [
-    "tsc --no-emit",
-    "./validateFileNames"
+  "scripts": {
+    "validate-files-names": "node ./validateFileNames.js",
+    "check-js": "tsc --noEmit",
+    "precommit": "run-s lint-staged validate-files-names check-js"
+  },
+  "lint-staged": {
+    "**/*.{j,t}s{x,}": [
+      "prettier --write --single-quote --trailing-comma all",
+      "git add"
   ],
+    "**/*.js{x,}": [
+      "eslint"
+    ]
+  },
   "peerDependencies": {
     "babel-eslint": "^7.2.3",
     "eslint": "^4.1.1",
@@ -37,7 +47,21 @@
     "@types/minimatch": "^3.0.0",
     "@types/node": "^8.0.24",
     "@types/shelljs": "^0.7.4",
+    "babel-eslint": "^7.2.3",
+    "eslint": "^4.1.1",
+    "eslint-config-airbnb": "^15.0.2",
+    "eslint-config-prettier": "^2.3.0",
+    "eslint-plugin-import": "^2.7.0",
+    "eslint-plugin-jsx-a11y": "^6.0.2",
+    "eslint-plugin-react": "^7.1.0",
     "husky": "^0.14.3",
+    "npm-run-all": "^4.0.2",
+    "prettier": "^1.5.3",
+    "tslint": "^5.5.0",
+    "tslint-config-prettier": "^1.1.0",
+    "tslint-eslint-rules": "^4.1.1",
+    "tslint-microsoft-contrib": "^5.0.1",
+    "tslint-react": "^3.0.0",
     "typescript": "^2.4.2"
   }
 }
