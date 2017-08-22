@@ -36,6 +36,8 @@ try {
 const files = getFiles();
 
 // Create a place to store files in violation of naming convention
+
+/** @type {Array<string>} */
 const filesInViolation = [];
 
 // Now let's go through the files to see if they violate the naming convention
@@ -83,28 +85,44 @@ if (filesInViolation.length > 0) {
 
 function getFiles() {
   // Let's only validate files managed by git
-  const { code, stdout } = shelljs.exec('git ls-files', { silent: true });
-  if (code === 0 && typeof stdout === 'string') {
+  const { stdout } = shelljs.exec('git ls-files', { silent: true });
+  if (typeof stdout === 'string') {
     return stdout.split('\n').filter(file => {
       // remove empty strings from the array and remove files in ignored paths
       return file.length !== 0 && !isIgnored(file);
     });
   } else {
-    console.error(red('Unable to read git tree, is this a git repository?'));
-    process.exit(1);
+    throw new Error('Unable to read git tree, is this a git repository?');
   }
 }
+
+/**
+ * 
+ * @param {string} filePathComponent
+ */
 function isCamelCase(filePathComponent) {
   return camelCasedFileNameRegex.test(filePathComponent);
 }
+
+/**
+ * @param {string} filePath 
+ */
 function isIgnored(filePath) {
   return ignoredPatterns.some(ignoredFileOrDirectory => {
     return minimatch(filePath, ignoredFileOrDirectory, { matchBase: true });
   });
 }
+
+/**
+ * @param {string} text 
+ */
 function red(text) {
   return `\x1b[31m${text}\x1b[0m`;
 }
+
+/**
+ * @param {string} text 
+ */
 function underline(text) {
   return `\x1b[4m${text}\x1b[0m`;
 }
