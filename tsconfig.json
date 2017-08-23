@@ -3,7 +3,11 @@
     "allowSyntheticDefaultImports": true,
   
     "strict": true,
+    "noImplicitReturns": true,
+    "forceConsistentCasingInFileNames": true,
+    "noFallthroughCasesInSwitch": true,
     "noEmitOnError": true,
+
     "module": "commonjs",
     "target": "es2015",
     "noUnusedLocals": true,
