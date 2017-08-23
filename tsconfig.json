@@ -1,53 +1,26 @@
 {
   "compilerOptions": {
-    // It looks like TS >= 2.3 is having issues resolving type definitions
-    // bundled with npm packages unless this is set to "node" (although it
-    // is the default since 1.7)
-    "moduleResolution": "node",
     "allowSyntheticDefaultImports": true,
   
-    "module": "commonjs",
-    "target": "es2015",
-    "skipLibCheck": false,
-    "skipDefaultLibCheck": true,
-    
     "strict": true,
-    "noUnusedLocals": true,
-    "noUnusedParameters": true,
-    "strictNullChecks": true,
+    "noImplicitReturns": true,
     "forceConsistentCasingInFileNames": true,
     "noFallthroughCasesInSwitch": true,
-    "noImplicitReturns": true,
-    "noImplicitThis": true,
-    
     "noEmitOnError": true,
+    "noUnusedLocals": true,
+    "noUnusedParameters": true,
 
+    "module": "commonjs",
+    "target": "es2015",
     "sourceMap": true,
-    
-    "allowJs": false,
-    "checkJs": true, // Enable TS type checker for JS
+
+    "allowJs": true,
+    "checkJs": true,
+    "maxNodeModuleJsDepth": 2, // Allow TypeScript to consume JS files in node_modules to infer types
 
     // Do not transpile JSX with TypeScript, we will do that with Babel.
     // This allows us to use babel-preset-react-optimize to perform optimizations
     // on JSX. Otherwise Babel won't see any JSX and no optimizations will be applied.
-    "jsx": "react",
-
-    // Allow absolute imports from root directory,
-    // e.g. `import 'file';` instead of `'../../file';`
-    // This also has to be set in `webpack.config.json`, check `resolve.modules`
-
-    // Since this file will be in node_modules/common-config, we need to go
-    // up two directory levels to resolve starting from the project's root.
-    "baseUrl": "./../..",
-
-    // Specifies how to resolve absolute imports relative to baseUrl
-    "paths": {
-      "*": [
-        "./*" // Try exact match in baseUrl first
-      ]
-    }
-  },
-  "exclude": [
-    "node_modules"
-  ]
+    "jsx": "preserve"
+  }
 }

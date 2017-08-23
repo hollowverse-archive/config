@@ -21,6 +21,7 @@ let ignoredPatterns = [
 const configFile = `${process.cwd()}/commonconfig.js`;
 
 try {
+  // eslint-disable-next-line import/no-dynamic-require,global-require
   const config = require(configFile);
 
   if (Array.isArray(config.ignoredPatterns)) {
@@ -32,10 +33,56 @@ try {
   );
 }
 
+/**
+ * 
+ * @param {string} filePathComponent
+ */
+function isCamelCase(filePathComponent) {
+  return camelCasedFileNameRegex.test(filePathComponent);
+}
+
+/**
+ * @param {string} filePath 
+ */
+function isIgnored(filePath) {
+  return ignoredPatterns.some(ignoredFileOrDirectory => {
+    return minimatch(filePath, ignoredFileOrDirectory, { matchBase: true });
+  });
+}
+
+/**
+ * @param {string} text 
+ */
+function red(text) {
+  return `\x1b[31m${text}\x1b[0m`;
+}
+
+/**
+ * @param {string} text 
+ */
+function underline(text) {
+  return `\x1b[4m${text}\x1b[0m`;
+}
+
+function getFiles() {
+  // Let's only validate files managed by git
+  const { stdout } = shelljs.exec('git ls-files', { silent: true });
+  if (typeof stdout === 'string') {
+    // remove empty strings from the array and remove files in ignored paths
+    return stdout
+      .split('\n')
+      .filter(file => file.length !== 0 && !isIgnored(file));
+  }
+
+  throw new Error('Unable to read git tree, is this a git repository?');
+}
+
 // Get the list of files that we're interested in validating
 const files = getFiles();
 
 // Create a place to store files in violation of naming convention
+
+/** @type {Array<string>} */
 const filesInViolation = [];
 
 // Now let's go through the files to see if they violate the naming convention
@@ -47,14 +94,12 @@ files.forEach(file => {
   let fileIsValid = true;
 
   // Let's process all path components to look for invalid ones
-  const processedPathComponents = pathComponents.map(pathComponents => {
-    if (!isCamelCase(pathComponents)) {
+  const processedPathComponents = pathComponents.map(pathComponent => {
+    if (!isCamelCase(pathComponent)) {
       fileIsValid = false;
-
-      return red(pathComponents);
-    } else {
-      return pathComponents;
+      return red(pathComponent);
     }
+    return pathComponent;
   });
 
   // If we encountered any invalid components for this file, we'll remember the file.
@@ -79,32 +124,4 @@ if (filesInViolation.length > 0) {
   // No, exit with 0
   console.info('All checked files are camelCased');
   shelljs.exit(0);
-}
-
-function getFiles() {
-  // Let's only validate files managed by git
-  const { code, stdout } = shelljs.exec('git ls-files', { silent: true });
-  if (code === 0 && typeof stdout === 'string') {
-    return stdout.split('\n').filter(file => {
-      // remove empty strings from the array and remove files in ignored paths
-      return file.length !== 0 && !isIgnored(file);
-    });
-  } else {
-    console.error(red('Unable to read git tree, is this a git repository?'));
-    process.exit(1);
-  }
-}
-function isCamelCase(filePathComponent) {
-  return camelCasedFileNameRegex.test(filePathComponent);
-}
-function isIgnored(filePath) {
-  return ignoredPatterns.some(ignoredFileOrDirectory => {
-    return minimatch(filePath, ignoredFileOrDirectory, { matchBase: true });
-  });
-}
-function red(text) {
-  return `\x1b[31m${text}\x1b[0m`;
-}
-function underline(text) {
-  return `\x1b[4m${text}\x1b[0m`;
 }
