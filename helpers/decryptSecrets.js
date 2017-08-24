@@ -20,7 +20,7 @@ module.exports = function decryptSecrets(secrets, baseDirectory = './secrets') {
           -out ${decryptedFilePath} \
           -d \
           -base64 \
-          -pass pass:${password}
+          -pass pass:'${password}'
       `;
     }),
   );
