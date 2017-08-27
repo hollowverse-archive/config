@@ -7,7 +7,7 @@ const shelljs = require('shelljs');
  * @param  {string | function(): (number | Promise<number>)} command
  * @return Exit code for the executed command, a non-zero value indicates failure
  */
-module.exports = async function executeCommands(command) {
+module.exports = async function executeCommand(command) {
   let code = 0;
   if (typeof command === 'function') {
     if (command.name) {
