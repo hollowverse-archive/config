@@ -1,9 +1,9 @@
 const shelljs = require('shelljs');
 
 /**
- * A helper function that execute a single shell command or JavaScript function.
+ * A helper function that executes a single shell command or JavaScript function.
  * Supports asynchronous JS functions, and executes shell commands in a child process
- * that the event loop is not blocked while executing the command.
+ * so that the event loop is not blocked while executing the command.
  * @param  {string | function(): (number | Promise<number>)} command
  * @return Exit code for the executed command, a non-zero value indicates failure
  */
