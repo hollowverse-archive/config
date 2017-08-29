@@ -1,4 +1,4 @@
-#! /bin/node
+#! /usr/bin/node
 
 // @ts-check
 
