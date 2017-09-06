@@ -4,26 +4,27 @@ const shelljs = require('shelljs');
  * A helper function that executes a single shell command or JavaScript function.
  * Supports asynchronous JS functions, and executes shell commands in a child process
  * so that the event loop is not blocked while executing the command.
- * @param  {string | function(): (number | Promise<number>)} command
- * @return Exit code for the executed command, a non-zero value indicates failure
+ * @param  {string | function(): (void | Promise<void>)} command
+ * @return {Promise<void>} A promise that resolves if the command was succesfull, otherwise throws an `Error`. If the command is a shell command, the error message will be stderr of the command.
  */
-module.exports = async function executeCommand(command) {
-  let code = 0;
+module.exports = function executeCommand(command) {
   if (typeof command === 'function') {
     if (command.name) {
       console.info(`${command.name}()`);
     }
-    try {
-      code = await Promise.resolve(command());
-    } catch (e) {
-      console.error(e);
-      code = 1;
-    }
-  } else {
-    const shellCommand = command.replace('\n', '').replace(/\s+/g, ' ').trim();
-    console.info(shellCommand);
-    code = await new Promise(resolve => shelljs.exec(shellCommand, resolve));
+    return Promise.resolve(command());
   }
 
-  return code;
+  const shellCommand = command.replace('\n', '').replace(/\s+/g, ' ').trim();
+  console.info(shellCommand);
+  return new Promise((resolve, reject) =>
+    shelljs.exec(shellCommand, (code, _, stderr) => {
+      if (code === 0) {
+        resolve();
+      } else {
+        const error = new TypeError(stderr);
+        reject(error);
+      }
+    }),
+  );
 };
