@@ -6,7 +6,7 @@ const executeCommand = require('./executeCommand');
  * Supports asynchronous functions.
  * @param {(string | function(): (void | Promise<void>))[]} commands The shell commands or JavaScript functions to execute in parallel
  */
-module.exports = async function executeCommandsInParallel(commands) {
+module.exports = function executeCommandsInParallel(commands) {
   // Promise.all rejects as soon as one promise rejects
   return Promise.all(commands.map(executeCommand));
 };
