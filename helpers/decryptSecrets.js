@@ -11,6 +11,13 @@ module.exports = function decryptSecrets(secrets, baseDirectory = './secrets') {
     secrets.map(secret => {
       const { password, decryptedFilename } = secret;
 
+      if (password === undefined) {
+        throw new TypeError(
+          `Decryption password for ${decryptedFilename} is undefined. ` +
+            'Make sure you are passing the correct environment variable in your deploy script',
+        );
+      }
+
       const decryptedFilePath = path.join(baseDirectory, decryptedFilename);
       const encryptedFilePath = `${decryptedFilePath}.enc`;
 
