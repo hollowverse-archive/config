@@ -8,5 +8,5 @@ const writeFile = promisify(fs.writeFile);
  * @param {any} data JavaScript object to write, must be serializable
  */
 module.exports = function writeJSONFile(path, data) {
-  return writeFile(path, data);
+  return writeFile(path, JSON.stringify(data, undefined, 2));
 };
