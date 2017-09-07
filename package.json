@@ -6,6 +6,7 @@
   "license": "Unlicense",
   "scripts": {
     "validate-file-names": "node ./validateFileNames.js",
+    "lint-js": "eslint '**/*.js{,x}'",
     "check-js": "tsc --noEmit",
     "lint-staged": "lint-staged"
   },

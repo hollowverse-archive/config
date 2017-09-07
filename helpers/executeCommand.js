@@ -5,7 +5,8 @@ const shelljs = require('shelljs');
  * Supports asynchronous JS functions, and executes shell commands in a child process
  * so that the event loop is not blocked while executing the command.
  * @param  {string | function(): (void | Promise<void>)} command
- * @return {Promise<void>} A promise that resolves if the command was succesfull, otherwise throws an `Error`. If the command is a shell command, the error message will be stderr of the command.
+ * @return {Promise<void>} A promise that resolves if the command was succesfull, otherwise throws an `Error`. If the
+ * command is a shell command, the error message will be stderr of the command.
  */
 module.exports = function executeCommand(command) {
   if (typeof command === 'function') {
