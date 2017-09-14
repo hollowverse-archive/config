@@ -13,10 +13,14 @@ const fs = require('fs');
  * filename and extension
  */
 module.exports = async function createZipFile(path, patterns) {
-  const files = flatten(patterns.map(pattern => glob.sync(pattern)));
+  const files = flatten(
+    patterns.map(pattern => glob.sync(pattern, { nodir: true })),
+  );
   const zipFile = new JSZip();
 
-  files.forEach(file => zipFile.file(file, fs.createReadStream(file)));
+  files.forEach(file =>
+    zipFile.file(file, fs.createReadStream(file), { createFolders: true }),
+  );
 
   return new Promise((resolve, reject) => {
     zipFile
