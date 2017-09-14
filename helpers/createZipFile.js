@@ -9,9 +9,9 @@ const fs = require('fs');
  * The contents of the ZIP file will have the same folder structure of the specified patterns, with
  * the root of the file matching the current working directory.
  * @param {string} path The full path where the ZIP file will be saved, including the
- * @param {string[]} patterns Glob patterns of files to include in the ZIP file.
- * @param {string[] | undefined} ignore Patterns of files to ignore
  * filename and extension
+ * @param {string[]} patterns Glob patterns of files to include in the ZIP file
+ * @param {string[] | undefined} ignore Patterns of files to ignore
  */
 module.exports = async function createZipFile(
   path,
