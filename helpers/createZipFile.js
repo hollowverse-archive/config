@@ -6,7 +6,7 @@ const fs = require('fs');
 /**
  * Compresses all files that match an array of glob patterns into a ZIP file written to the
  * specified path.
- * The contents of the ZIP file will have the same folder structure of the specified patterns, with
+ * The contents of the ZIP file will have the same folder structure of the matched files, with
  * the root of the file matching the current working directory.
  * @param {string} path The full path where the ZIP file will be saved, including the
  * filename and extension
