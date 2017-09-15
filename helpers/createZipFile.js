@@ -13,11 +13,7 @@ const fs = require('fs');
  * @param {string[]} patterns Glob patterns of files to include in the ZIP file
  * @param {string[] | undefined} ignore Patterns of files to ignore
  */
-module.exports = async function createZipFile(
-  path,
-  patterns,
-  ignore = undefined,
-) {
+module.exports = function createZipFile(path, patterns, ignore = undefined) {
   const files = flatten(
     patterns.map(pattern => glob.sync(pattern, { nodir: true, ignore })),
   );
