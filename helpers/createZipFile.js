@@ -1,5 +1,5 @@
 const glob = require('glob');
-const JsZip = require('jszip');
+const JSZip = require('jszip');
 const flatten = require('lodash/flatten');
 const fs = require('fs');
 
@@ -18,25 +18,10 @@ module.exports = async function createZipFile(
   patterns,
   ignore = undefined,
 ) {
-  /** @type {string[]} */
   const files = flatten(
-    await Promise.all(
-      patterns.map(
-        pattern =>
-          new Promise((resolve, reject) =>
-            glob(pattern, { nodir: true, ignore }, (err, matches) => {
-              if (err) {
-                reject(err);
-              } else {
-                resolve(matches);
-              }
-            }),
-          ),
-      ),
-    ),
+    patterns.map(pattern => glob.sync(pattern, { nodir: true, ignore })),
   );
-
-  const zipFile = new JsZip();
+  const zipFile = new JSZip();
 
   files.forEach(file =>
     zipFile.file(file, fs.createReadStream(file), { createFolders: true }),
