@@ -19,11 +19,11 @@ module.exports = function executeCommand(command) {
   const shellCommand = command.replace('\n', '').replace(/\s+/g, ' ').trim();
   console.info(shellCommand);
   return new Promise((resolve, reject) =>
-    shelljs.exec(shellCommand, (code, _, stderr) => {
+    shelljs.exec(shellCommand, (code, stdout, stderr) => {
       if (code === 0) {
         resolve();
       } else {
-        const error = new TypeError(stderr);
+        const error = new TypeError(stderr || stdout);
         reject(error);
       }
     }),
