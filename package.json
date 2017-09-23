@@ -57,7 +57,7 @@
   },
   "devDependencies": {
     "@types/glob": "^5.0.32",
-    "@types/jszip": "^0.0.33",
+    "@types/jszip": "^3.1.0",
     "@types/lodash": "^4.14.74",
     "@types/minimatch": "^3.0.0",
     "@types/node": "^8.0.24",
