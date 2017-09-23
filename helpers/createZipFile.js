@@ -25,7 +25,6 @@ module.exports = function createZipFile(path, patterns, ignore = undefined) {
 
   return new Promise((resolve, reject) => {
     zipFile
-      // @ts-ignore
       .generateNodeStream({ streamFiles: true, type: 'nodebuffer' })
       .pipe(fs.createWriteStream(path))
       .on('finish', resolve)
