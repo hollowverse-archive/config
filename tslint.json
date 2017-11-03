@@ -35,7 +35,6 @@
       true,
       "ignore-bound-class-methods"
     ],
-    "array-type": [true, "array-simple"],
 
     // Required so that React Styleguidist works
     "no-default-export": false,
