@@ -54,6 +54,10 @@
     "jsx-boolean-value": false,
 
     "prefer-type-cast": false,
-    "no-reserved-keywords": false
+    "no-reserved-keywords": false,
+
+    // Resolve conflicting rules for array types
+    "array-type": [true, "array-simple"],
+    "prefer-array-literal": [false]
   }
 }
