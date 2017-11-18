@@ -7,7 +7,8 @@ const minimatch = require('minimatch');
 const path = require('path');
 
 // Regex that defines our file and directory naming convention
-const camelCasedOrPascalCasedFileNameRegex = /^[.]?([a-zA-Z])+([0-9]|[a-zA-Z]|[.])*$/;
+const camelOrPascalCasedFileNameRegex = /^[.]?([a-zA-Z])+([0-9]|[a-zA-Z]|[.])*$/;
+const twoConsecutiveUpperCaseLettersRegex = /^.*[A-Z]{2}.*$
 
 // Files and directories that are exempt from the naming convention
 let ignoredPatterns = ['README.md', 'Dockerfile', 'LICENSE.md', 'customTypings/*', 'typings/*'];
@@ -26,11 +27,17 @@ try {
 }
 
 /**
- *
  * @param {string} filePathComponent
  */
-function isCamelCase(filePathComponent) {
-  return camelCasedOrPascalCasedFileNameRegex.test(filePathComponent);
+function isCamelOrPascalCase(filePathComponent) {
+  return camelOrPascalCasedFileNameRegex.test(filePathComponent);
+}
+
+/**
+ * @param {string} filePathComponent
+ */
+function hasTwoConsecutiveUpperCaseLetters(filePathComponent) {
+  return twoConsecutiveUpperCaseLettersRegex.test(filePathComponent);
 }
 
 /**
@@ -85,7 +92,7 @@ files.forEach(file => {
 
   // Let's process all path components to look for invalid ones
   const processedPathComponents = pathComponents.map(pathComponent => {
-    if (!isCamelCase(pathComponent)) {
+    if (!isCamelOrPascalCase(pathComponent) || hasTwoConsecutiveUpperCaseLetters(pathComponent)) {
       fileIsValid = false;
       return red(pathComponent);
     }
