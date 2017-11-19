@@ -7,16 +7,11 @@ const minimatch = require('minimatch');
 const path = require('path');
 
 // Regex that defines our file and directory naming convention
-const camelCasedFileNameRegex = /^[.]?([a-z])+([0-9]|[a-zA-Z]|[.])*$/;
+const camelOrPascalCasedFileNameRegex = /^[.]?([a-zA-Z])+([0-9]|[a-zA-Z]|[.])*$/;
+const twoConsecutiveUpperCaseLettersRegex = /^.*[A-Z]{2}.*$
 
 // Files and directories that are exempt from the naming convention
-let ignoredPatterns = [
-  'README.md',
-  'Dockerfile',
-  'LICENSE.md',
-  'customTypings/*',
-  'typings/*',
-];
+let ignoredPatterns = ['README.md', 'Dockerfile', 'LICENSE.md', 'customTypings/*', 'typings/*'];
 
 const configFile = `${process.cwd()}/commonconfig.js`;
 
@@ -28,21 +23,25 @@ try {
     ignoredPatterns = config.ignoredPatterns;
   }
 } catch (e) {
-  console.info(
-    'Error reading "commonconfig.js", falling back to default configuration',
-  );
+  console.info('Error reading "commonconfig.js", falling back to default configuration');
 }
 
 /**
- * 
  * @param {string} filePathComponent
  */
-function isCamelCase(filePathComponent) {
-  return camelCasedFileNameRegex.test(filePathComponent);
+function isCamelOrPascalCase(filePathComponent) {
+  return camelOrPascalCasedFileNameRegex.test(filePathComponent);
 }
 
 /**
- * @param {string} filePath 
+ * @param {string} filePathComponent
+ */
+function hasTwoConsecutiveUpperCaseLetters(filePathComponent) {
+  return twoConsecutiveUpperCaseLettersRegex.test(filePathComponent);
+}
+
+/**
+ * @param {string} filePath
  */
 function isIgnored(filePath) {
   return ignoredPatterns.some(ignoredFileOrDirectory => {
@@ -51,14 +50,14 @@ function isIgnored(filePath) {
 }
 
 /**
- * @param {string} text 
+ * @param {string} text
  */
 function red(text) {
   return `\x1b[31m${text}\x1b[0m`;
 }
 
 /**
- * @param {string} text 
+ * @param {string} text
  */
 function underline(text) {
   return `\x1b[4m${text}\x1b[0m`;
@@ -69,9 +68,7 @@ function getFiles() {
   const { stdout } = shelljs.exec('git ls-files', { silent: true });
   if (typeof stdout === 'string') {
     // remove empty strings from the array and remove files in ignored paths
-    return stdout
-      .split('\n')
-      .filter(file => file.length !== 0 && !isIgnored(file));
+    return stdout.split('\n').filter(file => file.length !== 0 && !isIgnored(file));
   }
 
   throw new Error('Unable to read git tree, is this a git repository?');
@@ -95,7 +92,7 @@ files.forEach(file => {
 
   // Let's process all path components to look for invalid ones
   const processedPathComponents = pathComponents.map(pathComponent => {
-    if (!isCamelCase(pathComponent)) {
+    if (!isCamelOrPascalCase(pathComponent) || hasTwoConsecutiveUpperCaseLetters(pathComponent)) {
       fileIsValid = false;
       return red(pathComponent);
     }
