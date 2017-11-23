@@ -33,7 +33,8 @@
     "common-lint-staged": "./vendorBins/lintStaged.js",
     "common-tsc": "./vendorBins/tsc.js",
     "common-run-p": "./vendorBins/runP.js",
-    "common-run-s": "./vendorBins/runS.js"
+    "common-run-s": "./vendorBins/runS.js",
+    "common-npm-run-all": "./vendorBins/npmRunAll.js"
   },
   "dependencies": {
     "glob": "^7.1.2",
@@ -48,6 +49,7 @@
     "eslint-plugin-import": "^2.7.0",
     "eslint-plugin-jsx-a11y": "^6.0.2",
     "eslint-plugin-react": "^7.1.0",
+    "eslint-import-resolver-webpack": "^0.8.3",
     "lint-staged": "^4.0.3",
     "pre-commit": "^1.2.2",
     "prettier": "^1.5.3",
