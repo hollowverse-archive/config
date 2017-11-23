@@ -1,7 +1,8 @@
 {
   "name": "@hollowverse/common",
   "version": "1.2.0",
-  "description": "Common configurations, helper functions and code quality scripts for Hollowverse repos",
+  "description":
+    "Common configurations, helper functions and code quality scripts for Hollowverse repos",
   "repository": "https://github.com/hollowverse/common",
   "license": "Unlicense",
   "scripts": {
@@ -10,31 +11,22 @@
     "check-js": "tsc --noEmit",
     "lint-staged": "lint-staged"
   },
-  "pre-commit": [
-    "check-js",
-    "validate-file-names",
-    "lint-staged"
-  ],
+  "pre-commit": ["check-js", "validate-file-names", "lint-staged"],
   "lint-staged": {
-    "**/*.{j,t}s{x,}": [
-      "prettier --write",
-      "git add"
-    ],
-    "**/*.js{x,}": [
-      "eslint"
-    ]
+    "**/*.{j,t}s{x,}": ["prettier --write", "git add"],
+    "**/*.js{x,}": ["eslint"]
   },
   "bin": {
     "validate-file-names": "./validateFileNames.js",
-    "common-tslint": "./vendorBins/tslint.js",
-    "common-prettier": "./vendorBins/prettier.js",
-    "common-eslint": "./vendorBins/eslint.js",
-    "common-stylelint": "./vendorBins/stylelint.js",
-    "common-lint-staged": "./vendorBins/lintStaged.js",
-    "common-tsc": "./vendorBins/tsc.js",
-    "common-run-p": "./vendorBins/runP.js",
-    "common-run-s": "./vendorBins/runS.js",
-    "common-npm-run-all": "./vendorBins/npmRunAll.js"
+    "tslint": "./vendorBins/tslint.js",
+    "prettier": "./vendorBins/prettier.js",
+    "eslint": "./vendorBins/eslint.js",
+    "stylelint": "./vendorBins/stylelint.js",
+    "lint-staged": "./vendorBins/lintStaged.js",
+    "tsc": "./vendorBins/tsc.js",
+    "run-p": "./vendorBins/runP.js",
+    "run-s": "./vendorBins/runS.js",
+    "npm-run-all": "./vendorBins/npmRunAll.js"
   },
   "dependencies": {
     "glob": "^7.1.2",
