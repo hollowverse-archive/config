@@ -1,7 +1,7 @@
 {
   "compilerOptions": {
     "allowSyntheticDefaultImports": false,
-  
+
     "strict": true,
     "noImplicitReturns": true,
     "forceConsistentCasingInFileNames": true,
@@ -22,9 +22,5 @@
     // This allows us to use babel-preset-react-optimize to perform optimizations
     // on JSX. Otherwise Babel won't see any JSX and no optimizations will be applied.
     "jsx": "preserve"
-  },
-  "exclude": [
-    "node_modules",
-    "vendorBins"
-  ]
+  }
 }
