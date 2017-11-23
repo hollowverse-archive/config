@@ -25,16 +25,22 @@
     ]
   },
   "bin": {
-    "validate-file-names": "./validateFileNames.js"
+    "validate-file-names": "./validateFileNames.js",
+    "common-tslint": "./vendorBins/tslint.js",
+    "common-prettier": "./vendorBins/prettier.js",
+    "common-eslint": "./vendorBins/eslint.js",
+    "common-stylelint": "./vendorBins/stylelint.js",
+    "common-lint-staged": "./vendorBins/lintStaged.js",
+    "common-tsc": "./vendorBins/tsc.js",
+    "common-run-p": "./vendorBins/runP.js",
+    "common-run-s": "./vendorBins/runS.js"
   },
   "dependencies": {
     "glob": "^7.1.2",
     "jszip": "^3.1.4",
     "lodash": "^4.17.4",
     "minimatch": "^3.0.4",
-    "shelljs": "^0.7.8"
-  },
-  "peerDependencies": {
+    "shelljs": "^0.7.8",
     "babel-eslint": "^7.2.3",
     "eslint": "^4.1.1",
     "eslint-config-airbnb": "^16.1.0",
@@ -53,7 +59,8 @@
     "tslint-eslint-rules": "^4.1.1",
     "tslint-microsoft-contrib": "^5.0.1",
     "tslint-react": "^3.0.0",
-    "typescript": "^2.4.2"
+    "typescript": "^2.4.2",
+    "npm-run-all": "^4.0.2"
   },
   "devDependencies": {
     "@types/glob": "^5.0.32",
@@ -61,18 +68,6 @@
     "@types/lodash": "^4.14.74",
     "@types/minimatch": "^3.0.0",
     "@types/node": "^8.0.24",
-    "@types/shelljs": "^0.7.4",
-    "babel-eslint": "^7.2.3",
-    "eslint": "^4.1.1",
-    "eslint-config-airbnb": "^15.0.2",
-    "eslint-config-prettier": "^2.3.0",
-    "eslint-plugin-import": "^2.7.0",
-    "eslint-plugin-jsx-a11y": "^6.0.2",
-    "eslint-plugin-react": "^7.1.0",
-    "lint-staged": "^4.0.3",
-    "npm-run-all": "^4.0.2",
-    "pre-commit": "^1.2.2",
-    "prettier": "^1.5.3",
-    "typescript": "^2.4.2"
+    "@types/shelljs": "^0.7.4"
   }
 }
