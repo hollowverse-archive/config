@@ -13,8 +13,8 @@
     shelljs "^0.7.8"
 
 "@hollowverse/validate-filenames@^1.3.1":
-  version "1.3.1"
-  resolved "https://registry.yarnpkg.com/@hollowverse/validate-filenames/-/validate-filenames-1.3.1.tgz#bf7889eb427899a4eb6104690133ce6cbe69a7f0"
+  version "1.3.2"
+  resolved "https://registry.yarnpkg.com/@hollowverse/validate-filenames/-/validate-filenames-1.3.2.tgz#1912b5189d214a17cc0d1ceca2a786aed3ac378a"
   dependencies:
     "@hollowverse/common" hollowverse/common
     babel-polyfill "^6.26.0"
