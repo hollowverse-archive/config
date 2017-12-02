@@ -49,7 +49,7 @@
     "react-tsx-curly-spacing": false,
 
     "no-any": false,
-    "jsx-boolean-value": false,
+    "jsx-boolean-value": [true, "always"],
 
     "prefer-type-cast": false,
     "no-reserved-keywords": false,
