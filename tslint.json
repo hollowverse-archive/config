@@ -36,8 +36,7 @@
       "ignore-bound-class-methods"
     ],
 
-    // Required so that React Styleguidist works
-    "no-default-export": false,
+    "no-default-export": true,
 
     // microsoft-tslint-contrib
     "import-name": false,
@@ -50,7 +49,7 @@
     "react-tsx-curly-spacing": false,
 
     "no-any": false,
-    "jsx-boolean-value": false,
+    "jsx-boolean-value": [true, "always"],
 
     "prefer-type-cast": false,
     "no-reserved-keywords": false,
