@@ -6,11 +6,36 @@
   ],
   "parser": "babel-eslint",
   "plugins": [
-    "react"
+    "react",
+    "graphql"
   ],
   "rules": {
-    "no-console": 0,
-    "arrow-body-style": 0,
-    "max-len": [2, 120]
+    "max-len": ["error", 120],
+    "max-depth": ["error", 4],
+    "graphql/template-strings": [
+      "error",
+      {
+        "env": "literal",
+        "validators": "all"
+      }
+    ],
+    "graphql/no-deprecated-fields": [
+      "error",
+      {
+        "env": "literal"
+      }
+    ],
+    "graphql/capitalized-type-name": [
+      "error",
+      {
+        "env": "literal"
+      }
+    ],
+    "graphql/named-operations": [
+      "error",
+      {
+        "env": "literal"
+      }
+    ]
   }
 }

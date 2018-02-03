@@ -4,11 +4,12 @@
     "tslint-react",
     "tslint-microsoft-contrib",
     "tslint-eslint-rules",
-    "tslint-config-prettier"
+    "tslint-config-prettier",
+    "rxjs-tslint-rules"
   ],
   "rules": {
     "max-line-length": [true, 120],
-    "no-unsafe-any": false,
+    "no-unsafe-any": true,
     "strict-boolean-expressions": false,
     "missing-jsdoc": false,
     "trailing-comma": [true],
@@ -45,17 +46,35 @@
     "misnamed-import": false,
     "restrict-plus-operand": false,
     "no-single-line-block-comment": false,
-    "react-unused-props-and-state": false,
-    "react-tsx-curly-spacing": false,
 
     "no-any": false,
-    "jsx-boolean-value": [true, "never"],
 
     "prefer-type-cast": false,
     "no-reserved-keywords": false,
 
     // Resolve conflicting rules for array types
     "array-type": [true, "array-simple"],
-    "prefer-array-literal": [false]
+    "prefer-array-literal": [false],
+
+    "react-unused-props-and-state": false,
+    "react-tsx-curly-spacing": false,
+    "jsx-boolean-value": [true, "never"],
+    // This does not work consistently
+    // and sometimes adding a `key` causes unnecessary re-renders.
+    "jsx-key": false,
+
+    // Allows TSLint to recognize bluebird promises as valid promises
+    // that can be `await`ed
+    "await-promise": [true, "Bluebird"],
+
+    "rxjs-add": {
+      "severity": "error"
+    },
+    "rxjs-no-add": false,
+    "rxjs-no-create": true,
+    "rxjs-no-unused-add": true,
+    "rxjs-no-wholesale": true,
+
+    "no-backbone-get-set-outside-model": false
   }
 }
