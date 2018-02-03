@@ -9,7 +9,7 @@
   ],
   "rules": {
     "max-line-length": [true, 120],
-    "no-unsafe-any": false,
+    "no-unsafe-any": true,
     "strict-boolean-expressions": false,
     "missing-jsdoc": false,
     "trailing-comma": [true],
