@@ -1,6 +1,6 @@
 {
   "name": "@hollowverse/common",
-  "version": "2.2.0",
+  "version": "2.3.0",
   "description": "Common configurations, helper functions and code quality scripts for Hollowverse repos",
   "repository": "https://github.com/hollowverse/common",
   "license": "Unlicense",
@@ -36,7 +36,6 @@
     "eslint": "^4.5.0",
     "eslint-config-airbnb": "^16.1.0",
     "eslint-config-prettier": "^2.3.0",
-    "eslint-plugin-graphql": "^1.5.0",
     "eslint-plugin-import": "^2.7.0",
     "eslint-plugin-jsx-a11y": "^6.0.2",
     "eslint-plugin-react": "^7.1.0",
