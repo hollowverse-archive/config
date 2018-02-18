@@ -10,7 +10,7 @@
     "check-js": "tsc --noEmit",
     "lint-staged": "lint-staged",
     "pretest": "run-p --aggregate-output validate-filenames lint-staged",
-    "test": "run-p --aggregate-output -l check-s"
+    "test": "run-p --aggregate-output -l check-js"
   },
   "husky": {
     "hooks": {
