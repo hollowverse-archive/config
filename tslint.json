@@ -75,6 +75,9 @@
     "rxjs-no-unused-add": true,
     "rxjs-no-wholesale": true,
 
-    "no-backbone-get-set-outside-model": false
+    "no-backbone-get-set-outside-model": false,
+
+    // False positives, see https://github.com/palantir/tslint/issues/3419
+    "no-redundant-jsdoc": true
   }
 }
