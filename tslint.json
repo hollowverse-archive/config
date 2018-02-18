@@ -9,33 +9,18 @@
   ],
   "rules": {
     "max-line-length": [true, 120],
-    "no-unsafe-any": true,
+    "no-unsafe-any": false, // A lot of false positives
     "strict-boolean-expressions": false,
     "missing-jsdoc": false,
     "trailing-comma": [true],
-    "typedef": [
-      true,
-      "property-declaration"
-    ],
-    "variable-name": [
-      false
-    ],
-    "quotemark": [
-      true,
-      "single",
-      "jsx-double"
-    ],
-    "interface-name": [
-      true,
-      "never-prefix"
-    ],
+    "typedef": [true, "property-declaration"],
+    "variable-name": [false],
+    "quotemark": [true, "single", "jsx-double"],
+    "interface-name": [true, "never-prefix"],
     "member-access": false,
     "ordered-imports": [false],
     "no-relative-imports": false,
-    "semicolon": [
-      true,
-      "ignore-bound-class-methods"
-    ],
+    "semicolon": [true, "ignore-bound-class-methods"],
 
     "no-default-export": true,
 
@@ -75,6 +60,19 @@
     "rxjs-no-unused-add": true,
     "rxjs-no-wholesale": true,
 
-    "no-backbone-get-set-outside-model": false
+    "no-backbone-get-set-outside-model": false,
+
+    // False positives, see https://github.com/palantir/tslint/issues/3419
+    "no-redundant-jsdoc": false,
+
+    "completed-docs": [
+      false,
+      {
+        "enums": true,
+        "functions": {
+          "visibilities": ["exported"]
+        }
+      }
+    ]
   }
 }
