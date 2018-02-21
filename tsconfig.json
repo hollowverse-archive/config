@@ -1,7 +1,8 @@
 {
   "compilerOptions": {
-    "allowSyntheticDefaultImports": false,
-  
+    "esModuleInterop": true,
+    "moduleResolution": "node",
+
     "strict": true,
     "noImplicitReturns": true,
     "forceConsistentCasingInFileNames": true,
