@@ -1,15 +1,3 @@
 {
-  "extends": [
-    "airbnb/base",
-    "prettier",
-    "prettier/react"
-  ],
-  "parser": "babel-eslint",
-  "plugins": [
-    "react"
-  ],
-  "rules": {
-    "max-len": ["error", 120],
-    "max-depth": ["error", 4]
-  }
+  "extends": ["./eslint/base/.eslintrc.json"]
 }
