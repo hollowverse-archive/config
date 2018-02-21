@@ -73,6 +73,10 @@
           "visibilities": ["exported"]
         }
       }
-    ]
+    ],
+
+    // Disable, because of things like
+    // `import express from 'express'` does not match the default export `e`
+    "match-default-export-name": false
   }
 }
