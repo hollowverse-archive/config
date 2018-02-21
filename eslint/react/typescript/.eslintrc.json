@@ -15,7 +15,7 @@
     "react/no-redundant-should-component-update": "error",
     "react/no-render-return-value": "error",
     "react/void-dom-elements-no-children": "error",
-    "react/no-multi-comp": "error",
+    "react/no-multi-comp": ["error", { "ignoreStateless": true }],
     "react/jsx-pascal-case": "error",
     "react/jsx-no-target-blank": "error"
   }
