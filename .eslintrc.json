@@ -1,3 +1,3 @@
 {
-  "extends": ["./eslint/base"]
+  "extends": ["./eslint/base/.eslintrc.json"]
 }
