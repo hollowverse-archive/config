@@ -8,7 +8,8 @@
     "media-feature-name-no-vendor-prefix": [true],
     "selector-no-vendor-prefix": [true],
     "property-no-vendor-prefix": [true],
-    "value-no-vendor-prefix": [true]
+    "value-no-vendor-prefix": [true],
+    "property-blacklist": ["margin-bottom", "margin-right", "margin"]
   },
   "ignoreFiles": [
     "./coverage/**/*"
