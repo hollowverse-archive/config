@@ -1,12 +1,17 @@
-const path = require('path');
-const executeCommands = require('./executeCommands');
+import path from 'path';
+import { executeCommands } from './executeCommands';
+
+export type Secret = {
+  password: string;
+  decryptedFilename: string;
+};
 
 /**
  * Decrypts sensitive AES-256-CBC encrypted files using OpenSSL.
- * @param {Array<{ password: string, decryptedFilename: string }>} secrets Array of secret definitions
- * @param {string} baseDirectory The full path to the directory containing the encrypted secrets
+ * @param secrets Array of secret definitions
+ * @param baseDirectory The full path to the directory containing the encrypted secrets
  */
-module.exports = function decryptSecrets(secrets, baseDirectory = './secrets') {
+export function decryptSecrets(secrets: Secret[], baseDirectory = './secrets') {
   return executeCommands(
     secrets.map(secret => {
       const { password, decryptedFilename } = secret;
@@ -31,4 +36,6 @@ module.exports = function decryptSecrets(secrets, baseDirectory = './secrets') {
       `;
     }),
   );
-};
+}
+
+export default decryptSecrets;

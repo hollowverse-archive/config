@@ -1,0 +1,8 @@
+{
+  "rules": {
+    "no-submodule-imports": false,
+
+    // Disabled for backwards compatibility with previous versions of @hollowverse/common
+    "no-default-export": false
+  }
+}
