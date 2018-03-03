@@ -13,14 +13,14 @@ This repository contains shared configuration files, utility functions and code 
 
 ### How to use the shared configuration
 
-1. Install this package as dependency of your project using the [GitHub URL](https://github.com/hollowverse/common).
+1. Install this package as dependency of your project:
      
      ```bash
-     yarn add https://github.com/hollowverse/common --dev
+     yarn add @hollowverse/common --dev
      # or
-     npm install https://github.com/hollowverse/common --save-dev
+     npm install @hollowverse/common --save-dev
      ```
-2. Install the [peer dependencies](./package.json#L7) for each of the tools used in the new project.
+2. Install the [peer dependencies](./package.json#L64) for each of the tools used in the new project.
 3. Extend your project configuration files with the corresponding files from this package. For example, here is how to extend `tsconfig.json`:
     
     ```json
