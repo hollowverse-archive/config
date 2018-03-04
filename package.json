@@ -16,9 +16,9 @@
     "build": "run-s clean build/ts build/babel",
     "lint-staged": "lint-staged",
     "clean": "del-cli 'helpers/**.{d.ts,js}'",
-    "lint": "run-p -n -c --aggregate-output lint-ts",
-    "pretest": "run-p -n -c --aggregate-output lint validate-filenames lint-staged",
-    "test": "run-p -n --aggregate-output -l check-ts"
+    "lint": "run-p -c --aggregate-output lint-ts",
+    "pretest": "run-p -c --aggregate-output lint validate-filenames lint-staged",
+    "test": "run-p --aggregate-output -l check-ts"
   },
   "babel": {
     "presets": [
