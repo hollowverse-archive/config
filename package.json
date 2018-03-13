@@ -1,6 +1,6 @@
 {
   "name": "@hollowverse/common",
-  "version": "3.2.5",
+  "version": "3.2.6",
   "description": "Common configurations, helper functions and code quality scripts for Hollowverse repos",
   "repository": "https://github.com/hollowverse/common",
   "license": "Unlicense",
@@ -12,31 +12,13 @@
     "lint-ts": "tslint --project ./helpers 'helpers/**/*.ts{,x}'",
     "check-ts": "tsc --project ./helpers --noEmit",
     "build/ts": "tsc --project ./helpers",
-    "build/babel": "babel helpers -d helpers",
+    "build/babel": "babel --config-file ./lambda/.babelrc helpers -d helpers",
     "build": "run-s clean build/ts build/babel",
     "lint-staged": "lint-staged",
     "clean": "del-cli 'helpers/**.{d.ts,js}'",
     "lint": "run-p -c --aggregate-output lint-ts",
     "pretest": "run-p -c --aggregate-output lint validate-filenames lint-staged",
     "test": "run-p --aggregate-output -l check-ts"
-  },
-  "babel": {
-    "presets": [
-      [
-        "@babel/preset-env",
-        {
-          "targets": {
-            "node": "6.10"
-          },
-          "useBuiltIns": "usage"
-        }
-      ]
-    ],
-    "plugins": [
-      "@babel/transform-runtime"
-    ],
-    "comments": false,
-    "sourceMap": "inline"
   },
   "husky": {
     "hooks": {
