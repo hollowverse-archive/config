@@ -4,12 +4,14 @@ This repository contains shared configuration files used across multiple [Hollow
 
 ## Configuration Files
 
-`common` currently includes configuration files for:
+`@hollowverse/config` currently includes configuration files for:
 
 * TypeScript ([`tsconfig.json`](./tsconfig.json))
 * TSLint ([`tslint.json`](./tslint.json))
-* ESLint ([`.eslintrc.json`](./.eslintrc.json))
+* ESLint ([`.eslintrc.json`](./.eslintrc.json), other language-specific configurations in [`./eslint`](./eslint))
 * Stylelint ([`.stylelintrc`](./.stylelintrc))
+* Prettier ([`prettier.config.js`](./prettier.config.js))
+* Babel ([`lambda/.babelrc`](./lambda/.babelrc) for AWS Lambda)
 
 ### How to use the shared configuration
 
