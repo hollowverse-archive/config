@@ -1,5 +1,5 @@
 {
-  "name": "@hollowverse/common",
+  "name": "@hollowverse/config",
   "version": "4.0.0",
   "description": "Common configurations for Hollowverse repos",
   "repository": "https://github.com/hollowverse/common",
