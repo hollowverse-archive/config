@@ -1,0 +1,58 @@
+{
+  "license": "Unlicense",
+  "scripts": {
+    "check-ts": "tsc --project $npm_package_config_project --noEmit",
+    "tslint": "tslint '$npm_package_config_src' --project $npm_package_config_project",
+    "pre-push": "# OVERRIDE",
+    "pre-commit": "# OVERRIDE",
+    "lint-staged": "lint-staged",
+    "validate-filenames": "validate-filenames --config validateFilenames.js"
+  },
+  "lint-staged": {
+    "**/*.md": [
+      "prettier --write",
+      "git add"
+    ],
+    "**/*.{j,t}s{x,}": [
+      "prettier --write",
+      "git add"
+    ],
+    "**/!(package).json": [
+      "prettier --write",
+      "git add"
+    ],
+    "**/*.js{x,}": [
+      "eslint"
+    ]
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "yarn pre-commit",
+      "pre-push": "yarn pre-push",
+      "post-merge": "yarnhook",
+      "post-checkout": "yarnhook",
+      "post-rewrite": "yarnhook"
+    }
+  },
+  "devDependencies": {
+    "@hollowverse/validate-filenames": "^1.4.0",
+    "prettier": "^1.10.2",
+    "yarnhook": "^0.1.1",
+    "lint-staged": "^7.0.0",
+    "babel-eslint": "^8.2.2",
+    "eslint": "^4.18.2",
+    "eslint-config-airbnb": "^16.1.0",
+    "eslint-config-prettier": "^2.9.0",
+    "eslint-plugin-import": "^2.9.0",
+    "eslint-plugin-jsx-a11y": "^6.0.3",
+    "eslint-plugin-react": "^7.7.0",
+    "typescript": "^2.8.1",
+    "typescript-eslint-parser": "^14.0.0",
+    "tslint": "^5.9.1",
+    "tslint-config-prettier": "^1.8.0",
+    "tslint-eslint-rules": "^5.0.0",
+    "tslint-microsoft-contrib": "^5.0.3",
+    "tslint-react": "^3.5.1",
+    "rxjs-tslint-rules": "^3.12.0"
+  }
+}
