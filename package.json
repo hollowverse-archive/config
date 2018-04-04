@@ -12,12 +12,14 @@
     "lint-staged": "lint-staged",
     "test": "run-p -c --aggregate-output validate-filenames lint-staged",
     "set-version": "set-version",
-    "clown": "clown"
+    "clown": "clown",
+    "pre-push": "# OVERRIDE",
+    "pre-commit": "# OVERRIDE"
   },
   "husky": {
     "hooks": {
-      "pre-commit": "yarn test",
-      "pre-push": "yarn test",
+      "pre-commit": "yarn pre-commit",
+      "pre-push": "yarn pre-push",
       "post-merge": "yarnhook",
       "post-checkout": "yarnhook",
       "post-rewrite": "yarnhook"
@@ -27,21 +29,32 @@
     "**/*.{j,t}s{x,}": [
       "prettier --write",
       "git add"
+    ],
+    "**/*.md": [
+      "prettier --write",
+      "git add"
+    ],
+    "**/!(package).json": [
+      "prettier --write",
+      "git add"
+    ],
+    "**/*.js{x,}": [
+      "eslint"
     ]
   },
   "dependencies": {},
   "devDependencies": {
-    "@hollowverse/clown": "^0.0.1",
+    "@hollowverse/clown": "^0.0.2",
     "@hollowverse/utils": "^4.1.4",
-    "@hollowverse/validate-filenames": "^1.3.9",
-    "babel-eslint": "^8.2.1",
+    "@hollowverse/validate-filenames": "^1.4.0",
+    "babel-eslint": "^8.2.2",
     "del-cli": "^1.1.0",
-    "eslint": "^4.18.0",
+    "eslint": "^4.18.2",
     "eslint-config-airbnb": "^16.1.0",
     "eslint-config-prettier": "^2.9.0",
-    "eslint-plugin-import": "^2.8.0",
+    "eslint-plugin-import": "^2.9.0",
     "eslint-plugin-jsx-a11y": "^6.0.3",
-    "eslint-plugin-react": "^7.6.1",
+    "eslint-plugin-react": "^7.7.0",
     "husky": "^0.15.0-rc.8",
     "lint-staged": "^7.0.0",
     "npm-run-all": "^4.0.2",
