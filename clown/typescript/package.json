@@ -1,0 +1,16 @@
+{
+  "scripts": {
+    "check-ts": "tsc --project $npm_package_config_project --noEmit",
+    "tslint": "tslint '$npm_package_config_src' --project $npm_package_config_project"
+  },
+  "devDependencies": {
+    "typescript": "^2.8.1",
+    "typescript-eslint-parser": "^14.0.0",
+    "tslint": "^5.9.1",
+    "tslint-config-prettier": "^1.8.0",
+    "tslint-eslint-rules": "^5.0.0",
+    "tslint-microsoft-contrib": "^5.0.3",
+    "tslint-react": "^3.5.1",
+    "rxjs-tslint-rules": "^3.12.0"
+  }
+}
