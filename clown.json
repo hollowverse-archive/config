@@ -1,5 +1,3 @@
 {
-  "extensions": [
-    "./clown/common"
-  ]
+  "extensions": ["./clown/common", "./clownOverrides"]
 }

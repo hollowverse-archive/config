@@ -10,11 +10,11 @@
   "scripts": {
     "validate-filenames": "validate-filenames --config validateFilenames.js",
     "lint-staged": "lint-staged",
-    "test": "run-p -c --aggregate-output validate-filenames lint-staged",
+    "test": "run-p -c --aggregate-output validate-filenames lint-staged 'clown check'",
     "set-version": "set-version",
     "clown": "clown",
-    "pre-push": "# OVERRIDE",
-    "pre-commit": "# OVERRIDE"
+    "pre-push": "yarn test",
+    "pre-commit": "lint-staged"
   },
   "husky": {
     "hooks": {
