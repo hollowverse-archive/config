@@ -44,7 +44,7 @@
   },
   "dependencies": {},
   "devDependencies": {
-    "@hollowverse/clown": "^0.0.2",
+    "@hollowverse/clown": "^0.0.3",
     "@hollowverse/utils": "^4.1.4",
     "@hollowverse/validate-filenames": "^1.4.0",
     "babel-eslint": "^8.2.2",
