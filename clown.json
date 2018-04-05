@@ -1,0 +1,7 @@
+{
+  "extensions": [
+    "./clown/common",
+    "./clownOverrides/erase",
+    "./clownOverrides/add"
+  ]
+}
