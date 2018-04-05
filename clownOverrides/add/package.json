@@ -2,5 +2,10 @@
   "scripts": {
     "pre-push": "yarn test",
     "pre-commit": "lint-staged"
+  },
+  "lint-staged": {
+    "**/*.js{x,}": [
+      "eslint -c .eslintrc.json --no-eslintrc"
+    ]
   }
 }

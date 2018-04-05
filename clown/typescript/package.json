@@ -1,7 +1,7 @@
 {
   "scripts": {
-    "check-ts": "tsc --project $npm_package_config_project --noEmit",
-    "tslint": "tslint '$npm_package_config_src' --project $npm_package_config_project"
+    "check-ts": "tsc --project . --noEmit",
+    "tslint": "tslint 'src/**/*.ts' --project ."
   },
   "devDependencies": {
     "typescript": "^2.8.1",

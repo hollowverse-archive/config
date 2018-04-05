@@ -39,7 +39,7 @@
       "git add"
     ],
     "**/*.js{x,}": [
-      "eslint"
+      "eslint -c .eslintrc.json --no-eslintrc"
     ]
   },
   "dependencies": {},

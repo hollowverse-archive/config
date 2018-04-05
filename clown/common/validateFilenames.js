@@ -13,6 +13,7 @@ module.exports = {
       patterns: [
         '*/**/typings/*',
         '__tests__/**/*',
+        '**/__snapshots__/**',
         'docker-compose.yml',
         '**/LICENSE',
         '**/README.md',
