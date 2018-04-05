@@ -42,7 +42,6 @@
       "eslint -c .eslintrc.json --no-eslintrc"
     ]
   },
-  "dependencies": {},
   "devDependencies": {
     "@hollowverse/clown": "^0.0.3",
     "@hollowverse/utils": "^4.1.4",
@@ -66,7 +65,8 @@
     "tslint-microsoft-contrib": "^5.0.3",
     "tslint-react": "^3.5.1",
     "typescript": "^2.7.2",
-    "yarnhook": "^0.1.1"
+    "yarnhook": "^0.1.1",
+    "typescript-eslint-parser": "^14.0.0"
   },
   "engines": {
     "node": ">= 6.10"
