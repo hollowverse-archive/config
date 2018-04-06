@@ -3,5 +3,10 @@
   "publishConfig": {
     "access": "public"
   },
+  "scripts": {
+    "build": "# OVERRIDE",
+    "test": "# OVERRIDE",
+    "set-version": "set-version"
+  },
   "private": false
 }

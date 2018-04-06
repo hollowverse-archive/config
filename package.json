@@ -11,6 +11,7 @@
     "validate-filenames": "validate-filenames --config validateFilenames.js",
     "lint-staged": "lint-staged",
     "test": "run-p -c --aggregate-output validate-filenames lint-staged 'clown check'",
+    "build": "# Building is not required for this package",
     "set-version": "set-version",
     "clown": "clown",
     "pre-push": "yarn test",
@@ -70,9 +71,11 @@
     "npm-run-all": "^4.0.2",
     "prettier": "^1.10.2",
     "typescript": "^2.7.2",
-    "yarnhook": "^0.1.1"
+    "yarnhook": "^0.1.1",
+    "eslint": "^4.18.2"
   },
   "engines": {
     "node": ">= 6.10"
-  }
+  },
+  "private": false
 }
