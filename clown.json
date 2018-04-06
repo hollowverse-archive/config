@@ -1,6 +1,7 @@
 {
   "extensions": [
     "./clown/common",
+    "./clown/publishablePackage",
     "./clownOverrides/erase",
     "./clownOverrides/add"
   ]

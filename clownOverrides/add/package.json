@@ -1,7 +1,9 @@
 {
   "scripts": {
     "pre-push": "yarn test",
-    "pre-commit": "lint-staged"
+    "pre-commit": "lint-staged",
+    "test": "run-p -c --aggregate-output validate-filenames lint-staged 'clown check'",
+    "build": "# Building is not required for this package"
   },
   "lint-staged": {
     "**/*.js{x,}": [
