@@ -15,7 +15,7 @@
     "set-version": "set-version",
     "clown": "clown",
     "pre-push": "yarn common-check",
-    "pre-commit": "# Not required",
+    "pre-commit": "yarn common-check",
     "common-check": "run-p -l -c --aggregate-output validate-filenames lint-staged 'clown check'"
   },
   "husky": {
