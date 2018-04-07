@@ -11,11 +11,11 @@
     "validate-filenames": "validate-filenames --config validateFilenames.js",
     "lint-staged": "lint-staged",
     "test": "yarn common-check",
-    "build": "# Building is not required for this package",
+    "build": "# Not required",
     "set-version": "set-version",
     "clown": "clown",
-    "pre-push": "yarn test",
-    "pre-commit": "lint-staged",
+    "pre-push": "yarn common-check",
+    "pre-commit": "# Not required",
     "common-check": "run-p -l -c --aggregate-output validate-filenames lint-staged 'clown check'"
   },
   "husky": {
