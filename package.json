@@ -65,7 +65,7 @@
   },
   "devDependencies": {
     "@hollowverse/clown": "^0.0.3",
-    "@hollowverse/utils": "^4.1.4",
+    "@hollowverse/utils": "^5.0.2",
     "@hollowverse/validate-filenames": "^1.4.0",
     "del-cli": "^1.1.0",
     "eslint": "^4.18.2",
