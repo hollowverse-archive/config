@@ -10,12 +10,13 @@
   "scripts": {
     "validate-filenames": "validate-filenames --config validateFilenames.js",
     "lint-staged": "lint-staged",
-    "test": "run-p -c --aggregate-output validate-filenames lint-staged 'clown check'",
+    "test": "yarn common-check",
     "build": "# Building is not required for this package",
     "set-version": "set-version",
     "clown": "clown",
     "pre-push": "yarn test",
-    "pre-commit": "lint-staged"
+    "pre-commit": "lint-staged",
+    "common-check": "run-p -l -c --aggregate-output validate-filenames lint-staged 'clown check'"
   },
   "husky": {
     "hooks": {
@@ -64,7 +65,7 @@
     "typescript-eslint-parser": "^14.0.0"
   },
   "devDependencies": {
-    "@hollowverse/clown": "^0.0.3",
+    "@hollowverse/clown": "^0.0.4",
     "@hollowverse/utils": "^5.0.2",
     "@hollowverse/validate-filenames": "^1.4.0",
     "del-cli": "^1.1.0",
