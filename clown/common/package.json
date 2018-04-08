@@ -1,6 +1,8 @@
 {
   "license": "Unlicense",
   "scripts": {
+    "pre-push": "# OVERRIDE",
+    "pre-commit": "# OVERRIDE",
     "lint-staged": "lint-staged",
     "common-check": "run-p -l -c --aggregate-output validate-filenames lint-staged 'clown check'",
     "validate-filenames": "validate-filenames --config validateFilenames.js"
