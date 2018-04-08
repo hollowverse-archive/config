@@ -23,8 +23,8 @@
       ]
     },
     "writerOpts": {
-      "generateOn": "type",
-      "commitsSort": "type"
+      "commitsSort": "type",
+      "transform": {}
     }
   }
 }
