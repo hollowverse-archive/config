@@ -12,19 +12,11 @@
   },
   "generateNotes": {
     "preset": "angular",
-    "parserOpts": {
-      "noteKeywords": [
-        "fix",
-        "Fix",
-        "Feature",
-        "feature",
-        "breaking",
-        "Breaking"
-      ]
-    },
     "writerOpts": {
       "commitsSort": "type",
       "transform": {}
     }
-  }
+  },
+  "success": [],
+  "fail": []
 }
