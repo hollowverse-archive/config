@@ -18,8 +18,21 @@
     "subject-full-stop": [2, "never", "."],
     "subject-max-length": [2, "always", 9999],
     "subject-min-length": [2, "always", 0],
-    "type-enum": [2, "always", ["fix", "feature", "breaking", "other"]],
-    "type-case": [2, "always", "lower-case"],
+    "type-enum": [
+      2,
+      "always",
+      [
+        "fix",
+        "Fix",
+        "feature",
+        "Feature",
+        "breaking",
+        "Breaking",
+        "other",
+        "Other"
+      ]
+    ],
+    "type-case": [0],
     "type-empty": [2, "never"],
     "type-max-length": [0],
     "type-min-length": [0],
