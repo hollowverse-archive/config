@@ -1,0 +1,13 @@
+{
+  "lint-staged": {
+    "**/**/*.{s,}css": [
+      "stylelint --syntax scss",
+      "prettier --write",
+      "git add"
+    ]
+  },
+  "devDependencies": {
+    "@types/stylelint": "^7.10.0",
+    "stylelint": "^8.4.0"
+  }
+}

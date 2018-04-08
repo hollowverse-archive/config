@@ -65,7 +65,9 @@
     "tslint-eslint-rules": "^5.0.0",
     "tslint-microsoft-contrib": "^5.0.3",
     "tslint-react": "^3.5.1",
-    "typescript-eslint-parser": "^14.0.0"
+    "typescript-eslint-parser": "^14.0.0",
+    "stylelint-config-standard": "^17.0.0",
+    "stylelint-no-unsupported-browser-features": "^1.0.0"
   },
   "devDependencies": {
     "@commitlint/cli": "^6.1.3",
