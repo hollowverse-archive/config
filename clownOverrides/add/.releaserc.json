@@ -1,0 +1,3 @@
+{
+  "extends": ["./semanticRelease/.releaserc.json"]
+}
