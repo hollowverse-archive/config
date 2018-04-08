@@ -9,5 +9,14 @@
       { "type": "breaking", "release": "major" },
       { "type": "Breaking", "release": "major" }
     ]
-  }
+  },
+  "generateNotes": {
+    "preset": "angular",
+    "writerOpts": {
+      "commitsSort": "type",
+      "transform": {}
+    }
+  },
+  "success": [],
+  "fail": []
 }
