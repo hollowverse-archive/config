@@ -6,7 +6,13 @@
   "scripts": {
     "build": "# OVERRIDE",
     "test": "# OVERRIDE",
-    "semantic-release": "semantic-release"
+    "semantic-release": "semantic-release",
+    "commitlint": "commitlint -e $GIT_PARAMS"
+  },
+  "husky": {
+    "hooks": {
+      "commit-msg": "yarn commitlint"
+    }
   },
   "devDependencies": {
     "semantic-release": "^15.1.5",

@@ -17,7 +17,7 @@
     "pre-push": "yarn common-check",
     "pre-commit": "yarn common-check",
     "common-check": "run-p -l -c --aggregate-output validate-filenames lint-staged 'clown check'",
-    "commitlint": "commitlint",
+    "commitlint": "commitlint -e $GIT_PARAMS",
     "semantic-release": "semantic-release"
   },
   "husky": {
@@ -26,7 +26,8 @@
       "pre-push": "yarn pre-push",
       "post-merge": "yarnhook",
       "post-checkout": "yarnhook",
-      "post-rewrite": "yarnhook"
+      "post-rewrite": "yarnhook",
+      "commit-msg": "yarn commitlint"
     }
   },
   "lint-staged": {
