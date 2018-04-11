@@ -1,7 +1,6 @@
 {
   "recommendations": [
     "streetsidesoftware.code-spell-checker",
-    "dbaeumer.vscode-eslint",
     "eg2.tslint",
     "esbenp.prettier-vscode",
     "christian-kohler.path-intellisense",
