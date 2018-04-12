@@ -63,10 +63,6 @@ helpers/**/*.d.ts
 # Builds
 dist
 
-# Editor configs
-.vscode/**/*
-!.vscode/launch.json
-
 secrets/**/*
 !secrets/**/*.enc
 !secrets/**/*.d.ts
