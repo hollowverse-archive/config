@@ -290,9 +290,9 @@
     fast-extend "0.0.2"
     fs-monkey "^0.3.0"
 
-"@hollowverse/clown@^1.0.0":
-  version "1.0.0"
-  resolved "https://registry.yarnpkg.com/@hollowverse/clown/-/clown-1.0.0.tgz#6f3bea6071ea1f80d995895be06048c3bbdbebf5"
+"@hollowverse/clown@^2.0.1":
+  version "2.0.1"
+  resolved "https://registry.yarnpkg.com/@hollowverse/clown/-/clown-2.0.1.tgz#fe3e2fff562d2666f0991806b10cf3b712215efa"
   dependencies:
     "@babel/polyfill" "^7.0.0-beta.44"
     "@babel/runtime" "^7.0.0-beta.44"
@@ -306,6 +306,7 @@
     globby "^8.0.1"
     jest-diff "^22.4.3"
     lodash "^4.17.4"
+    sort-keys "^2.0.0"
 
 "@hollowverse/utils@^5.0.2":
   version "5.0.2"

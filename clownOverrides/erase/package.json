@@ -1,5 +1,0 @@
-{
-  "lint-staged": {
-    "**/*.js{x,}": null
-  }
-}
