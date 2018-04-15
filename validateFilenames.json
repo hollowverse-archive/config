@@ -16,7 +16,7 @@
         "**/__mocks__/**/*",
         "**/__snapshots__/**/*",
         "**/docker-compose.yml",
-        "**/Dockerfile",
+        "**/Dockerfile*",
         "**/LICENSE",
         "**/README.md"
       ]
