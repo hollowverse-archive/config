@@ -11,13 +11,12 @@
     {
       "validation": "ignore",
       "patterns": [
-        "*/**/typings/*",
-        "__tests__/**/*",
+        "**/typings/**/*",
         "**/__tests__/**/*",
-        "__mocks__/**/*",
         "**/__mocks__/**/*",
-        "**/__snapshots__/**",
-        "docker-compose.yml",
+        "**/__snapshots__/**/*",
+        "**/docker-compose.yml",
+        "**/Dockerfile",
         "**/LICENSE",
         "**/README.md"
       ]
