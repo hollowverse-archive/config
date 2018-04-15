@@ -2,10 +2,10 @@
   "license": "Unlicense",
   "scripts": {
     "pre-push": "# OVERRIDE",
-    "pre-commit": "# OVERRIDE",
+    "pre-commit": "yarn common-check",
     "lint-staged": "lint-staged",
     "common-check": "run-p -l -c --aggregate-output validate-filenames 'clown check'",
-    "validate-filenames": "validate-filenames --config validateFilenames.js"
+    "validate-filenames": "validate-filenames"
   },
   "lint-staged": {
     "**/*.md": [
@@ -34,12 +34,12 @@
     }
   },
   "devDependencies": {
-    "@hollowverse/validate-filenames": "^1.4.0",
-    "husky": "^0.15.0-rc.13",
-    "prettier": "^1.10.2",
-    "yarnhook": "^0.1.1",
-    "lint-staged": "^7.0.0",
-    "eslint": "^4.18.2",
-    "npm-run-all": "^4.0.2"
+    "@hollowverse/validate-filenames": "latest",
+    "husky": "next",
+    "prettier": "latest",
+    "yarnhook": "latest",
+    "lint-staged": "latest",
+    "eslint": "latest",
+    "npm-run-all": "latest"
   }
 }
