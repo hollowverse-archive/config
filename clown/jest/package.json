@@ -1,6 +1,6 @@
 {
   "scripts": {
-    "jest": "TZ=UTC NODE_ENV=test jest --colors"
+    "jest": "TZ=UTC NODE_ENV=test jest"
   },
   "jest": {
     "transform": {
