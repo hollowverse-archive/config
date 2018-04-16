@@ -4,7 +4,8 @@
     "pre-push": "# OVERRIDE",
     "pre-commit": "yarn common-check",
     "lint-staged": "lint-staged",
-    "common-check": "run-p -l -c --aggregate-output validate-filenames 'clown check'",
+    "common-check": "run-p -l -c --aggregate-output validate-filenames 'clown check' check-integrity",
+    "check-integrity": "yarn check --integrity",
     "validate-filenames": "validate-filenames"
   },
   "lint-staged": {

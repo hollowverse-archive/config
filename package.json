@@ -16,9 +16,10 @@
     "clown": "clown",
     "pre-push": "yarn common-check",
     "pre-commit": "yarn common-check",
-    "common-check": "run-p -l -c --aggregate-output validate-filenames 'clown check'",
+    "common-check": "run-p -l -c --aggregate-output validate-filenames 'clown check' check-integrity",
     "commitlint": "commitlint -e $GIT_PARAMS",
-    "semantic-release": "semantic-release"
+    "semantic-release": "semantic-release",
+    "check-integrity": "yarn check --integrity"
   },
   "husky": {
     "hooks": {
