@@ -69,7 +69,7 @@
     "tslint-eslint-rules": "^5.0.0",
     "tslint-microsoft-contrib": "^5.0.3",
     "tslint-react": "^3.5.1",
-    "typescript-eslint-parser": "^14.0.0"
+    "typescript-eslint-parser": "^15.0.0"
   },
   "devDependencies": {
     "@commitlint/cli": "^6.1.3",
