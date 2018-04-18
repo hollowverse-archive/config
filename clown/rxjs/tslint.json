@@ -1,12 +1,3 @@
 {
-  "extends": ["rxjs-tslint-rules"],
-  "rules": {
-    "rxjs-add": {
-      "severity": "error"
-    },
-    "rxjs-no-add": false,
-    "rxjs-no-create": true,
-    "rxjs-no-unused-add": true,
-    "rxjs-no-wholesale": true
-  }
+  "extends": ["./node_modules/@hollowverse/config/tslint/rxjs.json"]
 }
