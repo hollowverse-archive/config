@@ -8,6 +8,7 @@
     "kumar-harsh.graphql-for-vscode",
     "eamodio.gitlens",
     "EditorConfig.editorconfig",
-    "kisstkondoros.csstriggers"
+    "kisstkondoros.csstriggers",
+    "codezombiech.gitignore"
   ]
 }
