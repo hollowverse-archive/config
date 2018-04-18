@@ -16,8 +16,6 @@ module.exports = function clownCallback(clownFs) {
       value.endsWith('eslint'),
     );
 
-    delete json.devDependencies.eslint; // eslint-disable-line no-param-reassign
-
     return json;
   });
 };

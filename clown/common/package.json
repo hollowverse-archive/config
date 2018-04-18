@@ -35,12 +35,18 @@
     }
   },
   "devDependencies": {
-    "@hollowverse/validate-filenames": "latest",
-    "husky": "next",
-    "prettier": "latest",
-    "yarnhook": "latest",
-    "lint-staged": "latest",
-    "eslint": "latest",
-    "npm-run-all": "latest"
+    "@hollowverse/validate-filenames": "^3.0.1",
+    "husky": "^1.0.0-rc.1",
+    "prettier": "^1.12.0",
+    "yarnhook": "^0.2.0",
+    "lint-staged": "^7.0.4",
+    "babel-eslint": "^8.2.2",
+    "eslint": "^4.19.1",
+    "eslint-config-airbnb": "^16.1.0",
+    "eslint-config-prettier": "^2.9.0",
+    "eslint-plugin-import": "^2.9.0",
+    "eslint-plugin-jsx-a11y": "^6.0.3",
+    "eslint-plugin-react": "^7.7.0",
+    "npm-run-all": "^4.1.2"
   }
 }
