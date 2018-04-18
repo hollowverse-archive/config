@@ -51,14 +51,6 @@
     // that can be `await`ed
     "await-promise": [true, "Bluebird"],
 
-    "rxjs-add": {
-      "severity": "error"
-    },
-    "rxjs-no-add": false,
-    "rxjs-no-create": true,
-    "rxjs-no-unused-add": true,
-    "rxjs-no-wholesale": true,
-
     "no-backbone-get-set-outside-model": false,
 
     // False positives, see https://github.com/palantir/tslint/issues/3419
