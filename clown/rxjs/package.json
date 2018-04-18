@@ -1,0 +1,8 @@
+{
+  "dependencies": {
+    "rxjs": "^5.5.8"
+  },
+  "devDependencies": {
+    "rxjs-tslint-rules": "^3.14.0"
+  }
+}
