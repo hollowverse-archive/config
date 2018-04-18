@@ -264,9 +264,9 @@
     minimatch "^3.0.4"
     shelljs "^0.7.8"
 
-"@hollowverse/validate-filenames@^3.0.1":
-  version "3.0.1"
-  resolved "https://registry.yarnpkg.com/@hollowverse/validate-filenames/-/validate-filenames-3.0.1.tgz#a3a6fe488162d19d256e2cc5fa093af16e1b1aff"
+"@hollowverse/validate-filenames@^3.0.2":
+  version "3.0.2"
+  resolved "https://registry.yarnpkg.com/@hollowverse/validate-filenames/-/validate-filenames-3.0.2.tgz#60610109b63bed5285f3435e32ce721c5f623f1d"
   dependencies:
     "@babel/polyfill" "^7.0.0-beta.44"
     "@babel/runtime" "^7.0.0-beta.44"
