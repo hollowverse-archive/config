@@ -1,0 +1,9 @@
+{
+  "schemaPath": "schema.graphql",
+  "extensions": {
+    "endpoints": {
+      "dev": "https://api.hollowverse.com/graphql",
+      "prod": "https://api.hollowverse.com/graphql"
+    }
+  }
+}

@@ -25,6 +25,12 @@
     // Do not transpile JSX with TypeScript, we will do that with Babel.
     // This allows us to use babel-preset-react-optimize to perform optimizations
     // on JSX. Otherwise Babel won't see any JSX and no optimizations will be applied.
-    "jsx": "preserve"
+    "jsx": "preserve",
+
+    "plugins": [
+      {
+        "name": "tslint-language-service"
+      }
+    ]
   }
 }

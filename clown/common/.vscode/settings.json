@@ -1,5 +1,11 @@
 {
-  "cSpell.words": ["hollowverse", "loglevel", "promisify", "webpagetest"],
+  "cSpell.words": [
+    "hollowverse",
+    "loglevel",
+    "promisify",
+    "webpagetest",
+    "unhandledrejection"
+  ],
   "editor.tabSize": 2,
   "editor.formatOnSave": true,
   "[json]": {
@@ -7,12 +13,11 @@
   },
   "typescript.implementationsCodeLens.enabled": true,
   "typescript.referencesCodeLens.enabled": true,
-  "files.associations": {
-    ".gqlconfig": "javascript",
-    ".stylelintrc": "json"
-  },
+  "typescript.tsdk": "node_modules/typescript/lib",
   "files.exclude": {
     "**/node_modules/**": true
   },
-  "typescript.tsdk": "node_modules/typescript/lib"
+  "eslint.options": {
+    "reportUnusedDisableDirectives": true
+  }
 }
