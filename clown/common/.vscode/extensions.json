@@ -8,6 +8,7 @@
     "EditorConfig.editorconfig",
     "kisstkondoros.csstriggers",
     "codezombiech.gitignore",
-    "pflannery.vscode-versionlens"
+    "pflannery.vscode-versionlens",
+    "dbaeumer.vscode-eslint"
   ]
 }
