@@ -16,14 +16,14 @@
     "clown": "clown",
     "pre-push": "yarn common-check",
     "pre-commit": "yarn common-check",
-    "common-check": "run-p -l -c --aggregate-output validate-filenames 'clown check' check-integrity",
+    "common-check": "run-p -c --aggregate-output validate-filenames 'clown check' check-integrity",
     "commitlint": "commitlint -e $GIT_PARAMS",
     "semantic-release": "semantic-release",
     "check-integrity": "yarn check --integrity"
   },
   "husky": {
     "hooks": {
-      "pre-commit": "run-p -l -c --aggregate-output lint-staged pre-commit",
+      "pre-commit": "run-p -c --aggregate-output lint-staged pre-commit",
       "pre-push": "yarn pre-push",
       "post-merge": "yarnhook",
       "post-checkout": "yarnhook",
@@ -51,7 +51,7 @@
   "dependencies": {},
   "devDependencies": {
     "@commitlint/cli": "^6.1.3",
-    "@hollowverse/clown": "^3.0.0",
+    "@hollowverse/clown": "^3.1.1",
     "@hollowverse/utils": "^6.0.0",
     "@hollowverse/validate-filenames": "^3.0.2",
     "babel-eslint": "^8.2.2",
@@ -62,6 +62,7 @@
     "eslint-plugin-import": "^2.9.0",
     "eslint-plugin-jsx-a11y": "^6.0.3",
     "eslint-plugin-react": "^7.7.0",
+    "eslint-plugin-typescript": "^0.11.0",
     "husky": "^1.0.0-rc.1",
     "lint-staged": "^7.0.4",
     "npm-run-all": "^4.1.2",

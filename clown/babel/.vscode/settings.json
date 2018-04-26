@@ -1,0 +1,6 @@
+{
+  "files.associations": {
+    "**/.babelrc": "jsonc",
+    "**/.babelrc.json": "jsonc"
+  }
+}
