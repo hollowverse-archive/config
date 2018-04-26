@@ -4,6 +4,7 @@
     "lint-ts": "tslint 'src/**/*.ts' --project ."
   },
   "devDependencies": {
+    "eslint-plugin-typescript": "^0.11.0",
     "typescript": "^2.8.1",
     "tslint-language-service": "^0.9.9",
     "tslint": "^5.9.1",

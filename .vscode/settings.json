@@ -19,5 +19,10 @@
   "typescript.tsdk": "node_modules/typescript/lib",
   "eslint.options": {
     "reportUnusedDisableDirectives": true
+  },
+  "files.associations": {
+    "**/.babelrc": "jsonc",
+    "**/.babelrc.json": "jsonc",
+    "**/tsconfig.json": "jsonc"
   }
 }

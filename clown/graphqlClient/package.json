@@ -1,11 +1,15 @@
 {
   "scripts": {
-    "graphql/schema": "graphql get-schema -e prod"
+    "graphql/schema": "graphql get-schema -e prod -o schema.graphql"
+  },
+  "resolutions": {
+    "graphql": "^0.13.0"
   },
   "devDependencies": {
     "@playlyfe/gql": "^2.6.0",
+    "apollo-codegen": "^0.19.1",
     "graphql": "^0.13.0",
     "graphql-cli": "^2.15.9",
-    "eslint-plugin-graphql": "^1.5.0"
+    "eslint-plugin-graphql": "^2.1.0"
   }
 }

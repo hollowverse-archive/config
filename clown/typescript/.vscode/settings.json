@@ -1,3 +1,6 @@
 {
-  "eslint.validate": ["typescript", "typescriptreact"]
+  "eslint.validate": ["typescript", "typescriptreact"],
+  "files.associations": {
+    "**/tsconfig.json": "jsonc"
+  }
 }

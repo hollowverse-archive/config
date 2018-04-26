@@ -4,7 +4,7 @@
     "pre-push": "# OVERRIDE",
     "pre-commit": "yarn common-check",
     "lint-staged": "lint-staged",
-    "common-check": "run-p -l -c --aggregate-output validate-filenames 'clown check' check-integrity",
+    "common-check": "run-p -c --aggregate-output validate-filenames 'clown check' check-integrity",
     "check-integrity": "yarn check --integrity",
     "validate-filenames": "validate-filenames"
   },
@@ -27,7 +27,7 @@
   },
   "husky": {
     "hooks": {
-      "pre-commit": "run-p -l -c --aggregate-output lint-staged pre-commit",
+      "pre-commit": "run-p -c --aggregate-output lint-staged pre-commit",
       "pre-push": "yarn pre-push",
       "post-merge": "yarnhook",
       "post-checkout": "yarnhook",

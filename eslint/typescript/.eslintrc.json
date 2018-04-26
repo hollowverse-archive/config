@@ -1,0 +1,16 @@
+{
+  "parser": "typescript-eslint-parser",
+  "plugins": ["typescript"],
+  "rules": {
+    "typescript/no-unused-vars": ["error"],
+    "no-undefined": ["off"],
+    "no-undef": ["off"]
+  },
+  "settings": {
+    "import/resolver": {
+      "node": {
+        "extensions": [".ts", ".tsx", ".js", ".jsx"]
+      }
+    }
+  }
+}
