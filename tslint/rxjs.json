@@ -1,12 +1,10 @@
 {
   "extends": ["rxjs-tslint-rules"],
   "rules": {
-    "rxjs-add": {
-      "severity": "error"
-    },
-    "rxjs-no-add": false,
     "rxjs-no-create": true,
-    "rxjs-no-unused-add": true,
-    "rxjs-no-wholesale": true
+    "rxjs-no-ignored-error": true,
+    "rxjs-finnish": true,
+    "rxjs-no-operator": true,
+    "rxjs-no-patched": true
   }
 }
