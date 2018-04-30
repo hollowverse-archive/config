@@ -8,8 +8,8 @@
   "devDependencies": {
     "@playlyfe/gql": "^2.6.0",
     "apollo-codegen": "^0.19.1",
-    "graphql": "^0.13.0",
-    "graphql-cli": "^2.15.9",
+    "graphql": "^0.13.2",
+    "graphql-cli": "^2.15.11",
     "eslint-plugin-graphql": "^2.1.0"
   }
 }
