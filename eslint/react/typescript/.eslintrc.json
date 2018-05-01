@@ -17,6 +17,7 @@
     "react/void-dom-elements-no-children": "error",
     "react/no-multi-comp": ["error", { "ignoreStateless": true }],
     "react/jsx-pascal-case": "error",
-    "react/jsx-no-target-blank": "error"
+    "react/jsx-no-target-blank": "error",
+    "no-multi-str": ["off"]
   }
 }

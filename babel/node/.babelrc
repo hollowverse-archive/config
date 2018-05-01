@@ -1,5 +1,6 @@
 {
   "presets": [
+    "@babel/stage-3",
     [
       "@babel/env",
       {
@@ -10,10 +11,7 @@
       }
     ]
   ],
-  "plugins": [
-    "@babel/proposal-object-rest-spread",
-    "@babel/transform-runtime"
-  ],
+  "plugins": ["@babel/transform-runtime"],
   "sourceMap": "both",
   "retainLines": true
 }
