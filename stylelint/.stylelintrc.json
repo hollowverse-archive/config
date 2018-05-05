@@ -1,6 +1,7 @@
 {
   "plugins": [
-    "stylelint-no-unsupported-browser-features"
+    "stylelint-no-unsupported-browser-features",
+    "stylelint-csstree-validator"
   ],
   "rules": {
     "plugin/no-unsupported-browser-features": [true],
@@ -11,7 +12,5 @@
     "value-no-vendor-prefix": [true],
     "property-blacklist": ["margin-bottom", "margin-right", "margin"]
   },
-  "ignoreFiles": [
-    "./coverage/**/*"
-  ]
+  "ignoreFiles": ["./coverage/**/*"]
 }
