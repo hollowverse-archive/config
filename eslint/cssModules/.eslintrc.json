@@ -1,0 +1,8 @@
+{
+  "extends": ["plugin:css-modules/recommended"],
+  "plugins": ["css-modules"],
+  "rules": {
+    "css-modules/no-unused-class": ["error", { "camelCase": true }],
+    "css-modules/no-undef-class": ["error", { "camelCase": true }]
+  }
+}
