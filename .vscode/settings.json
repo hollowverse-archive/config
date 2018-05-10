@@ -23,6 +23,7 @@
   "files.associations": {
     "**/.babelrc": "jsonc",
     "**/.babelrc.json": "jsonc",
-    "**/tsconfig.json": "jsonc"
+    "**/tsconfig.json": "jsonc",
+    "**/tslint.json": "jsonc"
   }
 }
