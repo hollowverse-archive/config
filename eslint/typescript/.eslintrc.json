@@ -11,7 +11,9 @@
     "no-restricted-syntax": ["off"],
     "no-unused-vars": ["off"],
     "no-restricted-globals": ["off"],
-    "import/first": ["off"]
+    "no-unexpected-require": ["off"],
+    "import/first": ["off"],
+    "import/no-dynamic-require": ["off"]
   },
   "settings": {
     "import/resolver": {
