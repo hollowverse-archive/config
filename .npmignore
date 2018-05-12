@@ -1,4 +1,5 @@
 node_modules
 src
-!clown/**/src
 !.gitignore
+
+!clown/**/src
