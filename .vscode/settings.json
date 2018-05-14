@@ -24,6 +24,7 @@
     "**/.babelrc": "jsonc",
     "**/.babelrc.json": "jsonc",
     "**/tsconfig.json": "jsonc",
-    "**/tslint.json": "jsonc"
+    "**/tslint.json": "jsonc",
+    "**/.eslintrc.json": "jsonc"
   }
 }
