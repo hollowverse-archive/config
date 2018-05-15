@@ -30,3 +30,7 @@ This repository contains shared configuration files used across multiple [Hollow
    ```
    Refer to each tool's documentation for more information on how to extend the configuration.
 4. Add properties to the configuration file to override the shared configuration as needed.
+
+---
+
+[If you'd like to tell us something, or need help with anything...](https://github.com/hollowverse/hollowverse/wiki/Help)
