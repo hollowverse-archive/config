@@ -60,20 +60,6 @@ typings/
 .env
 helpers/**/*.js
 helpers/**/*.d.ts
-# Builds
-dist
-
-secrets/**/*
-!secrets/**/*.enc
-!secrets/**/*.d.ts
-
-build.zip
-build
-
-# Elastic Beanstalk Files
-.elasticbeanstalk/*
-!.elasticbeanstalk/*.cfg.yml
-!.elasticbeanstalk/*.global.yml
 
 # Created by Serverless
 .build

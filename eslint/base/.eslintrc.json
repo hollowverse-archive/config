@@ -4,6 +4,7 @@
   "rules": {
     "max-len": ["error", 120],
     "max-depth": ["error", 4],
+    "arrow-body-style": ["off"],
     "import/prefer-default-export": ["off"],
     "import/no-default-export": ["error"],
     "import/extensions": [

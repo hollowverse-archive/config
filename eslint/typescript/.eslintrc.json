@@ -11,7 +11,13 @@
     "no-restricted-syntax": ["off"],
     "no-unused-vars": ["off"],
     "no-restricted-globals": ["off"],
-    "import/first": ["off"]
+    "no-unexpected-require": ["off"],
+    "import/first": ["off"],
+
+    // Already handled by TSLint
+
+    "import/no-dynamic-require": ["off"],
+    "import/no-extraneous-dependencies": ["off"]
   },
   "settings": {
     "import/resolver": {
