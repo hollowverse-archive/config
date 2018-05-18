@@ -2,8 +2,10 @@
   "main": "index.js",
   "private": true,
   "dependencies": {
-    "@types/node": "^8.10.16",
     "@hollowverse/utils": "^7.0.1"
+  },
+  "devDependencies": {
+    "@types/node": "^8.10.17"
   },
   "engines": {
     "node": ">= 8.10"
