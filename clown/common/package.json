@@ -4,7 +4,7 @@
     "pre-push": "# OVERRIDE",
     "pre-commit": "yarn common-check",
     "lint-staged": "lint-staged",
-    "check-prettier": "prettier './**/*.{t,j}s{,x}' '**/*.{css,scss,json,md,html}' --list-different",
+    "check-prettier": "prettier './**/*.{t,j}s{,x}' '**/*.{css,scss,json,md}' --list-different",
     "common-check": "run-p -c --aggregate-output check-prettier validate-filenames 'clown check' check-integrity",
     "check-integrity": "yarn check --integrity",
     "validate-filenames": "validate-filenames"
@@ -38,7 +38,7 @@
   "devDependencies": {
     "@hollowverse/validate-filenames": "^3.0.2",
     "husky": "^1.0.0-rc.1",
-    "prettier": "^1.12.0",
+    "prettier": "^1.13.5",
     "yarnhook": "^0.2.0",
     "lint-staged": "^7.0.5",
     "babel-eslint": "^8.2.2",
