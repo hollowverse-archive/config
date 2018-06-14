@@ -16,7 +16,8 @@
     "**/.babelrc.json": "jsonc",
     "**/tslint.json": "jsonc",
     "**/tsconfig.json": "jsonc",
-    "**/.eslintrc.json": "jsonc"
+    "**/.eslintrc.json": "jsonc",
+    "**/.prettierignore": "gitignore"
   },
   "typescript.implementationsCodeLens.enabled": true,
   "typescript.referencesCodeLens.enabled": true,

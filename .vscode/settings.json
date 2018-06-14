@@ -25,6 +25,7 @@
     "**/.babelrc.json": "jsonc",
     "**/tsconfig.json": "jsonc",
     "**/tslint.json": "jsonc",
-    "**/.eslintrc.json": "jsonc"
+    "**/.eslintrc.json": "jsonc",
+    "**/.prettierignore": "gitignore"
   }
 }
