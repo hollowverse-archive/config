@@ -1,8 +1,5 @@
 {
   "extends": "../base/.eslintrc.json",
   "parser": "babel-eslint",
-  "extends": [
-    "airbnb/react",
-    "plugin:react/recommended"
-  ]
+  "extends": ["airbnb/react", "plugin:react/recommended"]
 }

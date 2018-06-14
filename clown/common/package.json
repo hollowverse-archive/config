@@ -4,7 +4,8 @@
     "pre-push": "# OVERRIDE",
     "pre-commit": "yarn common-check",
     "lint-staged": "lint-staged",
-    "common-check": "run-p -c --aggregate-output validate-filenames 'clown check' check-integrity",
+    "check-prettier": "prettier './**/*.{t,j}s{,x}' '**/*.{css,scss,json,md,html}' --list-different",
+    "common-check": "run-p -c --aggregate-output check-prettier validate-filenames 'clown check' check-integrity",
     "check-integrity": "yarn check --integrity",
     "validate-filenames": "validate-filenames"
   },
@@ -17,7 +18,7 @@
       "prettier --write",
       "git add"
     ],
-    "**/!(package).json": [
+    "**/*.json": [
       "prettier --write",
       "git add"
     ],
@@ -27,7 +28,7 @@
   },
   "husky": {
     "hooks": {
-      "pre-commit": "run-p -c --aggregate-output lint-staged pre-commit",
+      "pre-commit": "npm-run-all -s lint-staged -p -c --aggregate-output pre-commit",
       "pre-push": "yarn pre-push",
       "post-merge": "yarnhook",
       "post-checkout": "yarnhook",

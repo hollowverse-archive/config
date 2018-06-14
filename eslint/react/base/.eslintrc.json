@@ -1,7 +1,5 @@
 {
-  "plugins": [
-    "react"
-  ],
+  "plugins": ["react"],
   "parserOptions": {
     "ecmaVersion": 8,
     "sourceType": "module",
@@ -9,7 +7,5 @@
       "jsx": true
     }
   },
-  "extends": [
-    "prettier/react"
-  ]
+  "extends": ["prettier/react"]
 }
