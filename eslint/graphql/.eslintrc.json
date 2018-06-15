@@ -5,25 +5,29 @@
       "error",
       {
         "env": "literal",
-        "validators": "all"
+        "validators": "all",
+        "projectName": "app"
       }
     ],
     "graphql/no-deprecated-fields": [
       "error",
       {
-        "env": "literal"
+        "env": "literal",
+        "projectName": "app"
       }
     ],
     "graphql/capitalized-type-name": [
       "error",
       {
-        "env": "literal"
+        "env": "literal",
+        "projectName": "app"
       }
     ],
     "graphql/named-operations": [
       "error",
       {
-        "env": "literal"
+        "env": "literal",
+        "projectName": "app"
       }
     ]
   }

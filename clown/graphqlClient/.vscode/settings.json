@@ -1,7 +1,6 @@
 {
   "cSpell.words": ["graphql"],
   "files.associations": {
-    "**/.gqlconfig": "json",
     "**/.graphqlconfig": "json"
   },
   "eslint.validate": ["graphql"]

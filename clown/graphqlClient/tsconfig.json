@@ -1,0 +1,9 @@
+{
+  "compilerOptions": {
+    "plugins": [
+      {
+        "name": "ts-graphql-plugin"
+      }
+    ]
+  }
+}
