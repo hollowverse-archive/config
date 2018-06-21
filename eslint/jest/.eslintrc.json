@@ -1,0 +1,19 @@
+{
+  "plugins": ["jest"],
+  "extends": ["plugin:jest/recommended"],
+  "env": {
+    "jest/globals": true
+  },
+  "rules": {
+    "jest/no-disabled-tests": "error",
+    "jest/no-focused-tests": "error",
+    "jest/no-jasmine-globals": "error",
+    "jest/no-test-prefixes": "error",
+    "jest/no-identical-title": "error",
+    "jest/prefer-to-be-undefined": "warn",
+    "jest/prefer-to-be-null": "warn",
+    "jest/lowercase-name": "warn",
+    "jest/consistent-test-it": "warn",
+    "jest/prefer-to-have-length": "warn"
+  }
+}
