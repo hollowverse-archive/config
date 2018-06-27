@@ -2,7 +2,7 @@
   "main": "index.js",
   "private": true,
   "dependencies": {
-    "@hollowverse/utils": "^7.0.1"
+    "@hollowverse/utils": "^8.0.0"
   },
   "devDependencies": {
     "@types/node": "^8.10.17"
