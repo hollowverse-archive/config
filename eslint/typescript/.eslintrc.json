@@ -14,7 +14,7 @@
     "no-unexpected-require": ["off"],
     "import/first": ["off"],
 
-    // Buggy, see https://github.com/eslint/typescript-eslint-parser/issues/384
+    // Buggy for TS, see https://github.com/eslint/typescript-eslint-parser/issues/384
     "no-useless-constructor": ["off"],
 
     // Already handled by TSLint
