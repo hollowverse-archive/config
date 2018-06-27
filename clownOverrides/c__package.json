@@ -6,8 +6,6 @@
     "build": "exit 0"
   },
   "lint-staged": {
-    "**/*.js{x,}": [
-      "eslint -c .eslintrc.json --no-eslintrc"
-    ]
+    "**/*.js{x,}": ["eslint -c .eslintrc.json --no-eslintrc"]
   }
 }
