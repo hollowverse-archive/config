@@ -4,7 +4,7 @@
     "stylelint-csstree-validator",
     "stylelint-declaration-block-no-ignored-properties",
     "stylelint-high-performance-animation",
-    "stylelint-declaration-strict-value"
+    "stylelint-declaration-use-variable"
   ],
   "rules": {
     "plugin/no-unsupported-browser-features": [true],
@@ -20,16 +20,12 @@
     "plugin/no-low-performance-animation-properties": [
       true,
       {
-        "ignore": "paint-properties"
+        "ignore": "paint-properties",
+        "ignoreProperties": ["color", "background-color"]
       }
     ],
-    "scale-unlimited/declaration-strict-value": [
-      ["z-index"],
-      {
-        "ignoreFunctions": true
-      }
-    ],
-    "plugin/declaration-block-no-ignored-properties": true
+    "plugin/declaration-block-no-ignored-properties": true,
+    "sh-waqar/declaration-use-variable": [["/margin/", "/padding/", "z-index"]]
   },
   "ignoreFiles": ["./coverage/**/*"]
 }

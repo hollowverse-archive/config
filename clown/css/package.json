@@ -14,7 +14,7 @@
     "stylelint-no-unsupported-browser-features": "^3.0.0",
     "stylelint-csstree-validator": "^1.2.2",
     "stylelint-declaration-block-no-ignored-properties": "^1.1.0",
-    "stylelint-declaration-strict-value": "^1.0.4",
+    "stylelint-declaration-use-variable": "^1.0.0",
     "stylelint-high-performance-animation": "^1.1.0"
   }
 }
