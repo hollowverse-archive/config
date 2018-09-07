@@ -7,12 +7,14 @@
     ]
   },
   "devDependencies": {
-    "@types/stylelint": "^7.10.0",
-    "stylelint": "^8.4.0",
-    "stylelint-config-standard": "^17.0.0",
-    "stylelint-no-unsupported-browser-features": "^1.0.0",
+    "eslint-plugin-css-modules": "^2.7.5",
+    "@types/stylelint": "^7.11.0",
+    "stylelint": "^9.3.0",
+    "stylelint-config-standard": "^18.2.0",
+    "stylelint-no-unsupported-browser-features": "^3.0.0",
     "stylelint-csstree-validator": "^1.2.2",
-
-    "eslint-plugin-css-modules": "^2.7.5"
+    "stylelint-declaration-block-no-ignored-properties": "^1.1.0",
+    "stylelint-declaration-use-variable": "^1.0.0",
+    "stylelint-high-performance-animation": "^1.1.0"
   }
 }

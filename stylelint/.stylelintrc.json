@@ -1,19 +1,31 @@
 {
   "plugins": [
     "stylelint-no-unsupported-browser-features",
-    "stylelint-csstree-validator"
+    "stylelint-csstree-validator",
+    "stylelint-declaration-block-no-ignored-properties",
+    "stylelint-high-performance-animation",
+    "stylelint-declaration-use-variable"
   ],
   "rules": {
     "plugin/no-unsupported-browser-features": [true],
-    "at-rule-no-vendor-prefix": [true],
-    "media-feature-name-no-vendor-prefix": [true],
-    "selector-no-vendor-prefix": [true],
-    "property-no-vendor-prefix": [true],
-    "value-no-vendor-prefix": [true],
+    "at-rule-no-vendor-prefix": true,
+    "media-feature-name-no-vendor-prefix": true,
+    "selector-no-vendor-prefix": true,
+    "property-no-vendor-prefix": true,
+    "value-no-vendor-prefix": true,
     "property-blacklist": ["margin-bottom", "margin-right", "margin"],
     "csstree/validator": {
       "ignore": ["composes"]
-    }
+    },
+    "plugin/no-low-performance-animation-properties": [
+      true,
+      {
+        "ignore": "paint-properties",
+        "ignoreProperties": ["color", "background-color"]
+      }
+    ],
+    "plugin/declaration-block-no-ignored-properties": true,
+    "sh-waqar/declaration-use-variable": [["/margin/", "/padding/", "z-index"]]
   },
   "ignoreFiles": ["./coverage/**/*"]
 }
