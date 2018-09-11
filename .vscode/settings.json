@@ -27,5 +27,8 @@
     "**/tslint.json": "jsonc",
     "**/.eslintrc.json": "jsonc",
     "**/.prettierignore": "gitignore"
+  },
+  "editor.codeActionsOnSave": {
+    "source.organizeImports": true
   }
 }
